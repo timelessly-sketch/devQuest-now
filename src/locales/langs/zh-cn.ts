@@ -157,6 +157,7 @@ const local: App.I18n.Schema = {
         loginOrRegister: '登录 / 注册',
         userNamePlaceholder: '请输入用户名',
         phonePlaceholder: '请输入手机号',
+        emailPlaceholder: '请输入邮箱',
         codePlaceholder: '请输入验证码',
         passwordPlaceholder: '请输入密码',
         confirmPasswordPlaceholder: '请再次输入密码',
