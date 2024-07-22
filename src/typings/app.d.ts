@@ -458,6 +458,10 @@ declare namespace App {
           };
           creativity: string;
         };
+        about: {
+          title: string;
+          introduction: string;
+        };
       };
       form: {
         required: string;
