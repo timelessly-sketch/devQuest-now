@@ -4,6 +4,7 @@ import { $t } from '@/locales';
 import { useRouterPush } from '@/hooks/common/router';
 import { useFormRules, useNaiveForm } from '@/hooks/common/form';
 import { useCaptcha } from '@/hooks/business/captcha';
+import { fetchRegister } from '@/service/api';
 
 defineOptions({
   name: 'Register'
@@ -40,8 +41,11 @@ const rules = computed<Record<keyof FormModel, App.Global.FormRule[]>>(() => {
 
 async function handleSubmit() {
   await validate();
-  // request to register
-  window.$message?.success($t('page.login.common.validateSuccess'));
+  const { error } = await fetchRegister(model.email, model.password, model.code);
+  if (!error) {
+    window.$message?.success($t('page.login.common.validateSuccess'));
+    await toggleLoginModule('pwd-login');
+  }
 }
 </script>
 

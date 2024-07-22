@@ -1,4 +1,22 @@
 import { request } from '../request';
+/**
+ * Register
+ *
+ * @param email email
+ * @param password Password
+ * @param code
+ */
+export function fetchRegister(email: string, password: string, code: string) {
+  return request({
+    url: '/system/member/register',
+    method: 'post',
+    data: {
+      email,
+      password,
+      code
+    }
+  });
+}
 
 /**
  * Login
