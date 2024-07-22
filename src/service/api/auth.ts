@@ -21,38 +21,23 @@ export function fetchRegister(email: string, password: string, code: string) {
 /**
  * Login
  *
- * @param userName User name
+ * @param email User name
  * @param password Password
  */
-export function fetchLogin(userName: string, password: string) {
+export function fetchLogin(email: string, password: string) {
   return request<Api.Auth.LoginToken>({
-    url: '/auth/login',
+    url: '/system/member/login',
     method: 'post',
     data: {
-      userName,
+      email,
       password
     }
   });
 }
 
 /** Get user info */
-export function fetchGetUserInfo() {
-  return request<Api.Auth.UserInfo>({ url: '/auth/getUserInfo' });
-}
-
-/**
- * Refresh token
- *
- * @param refreshToken Refresh token
- */
-export function fetchRefreshToken(refreshToken: string) {
-  return request<Api.Auth.LoginToken>({
-    url: '/auth/refreshToken',
-    method: 'post',
-    data: {
-      refreshToken
-    }
-  });
+export function fetchGetMemberInfo() {
+  return request<Api.Auth.MemberInfo>({ url: '/system/member/Info' });
 }
 
 /**

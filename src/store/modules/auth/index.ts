@@ -4,7 +4,7 @@ import { defineStore } from 'pinia';
 import { useLoading } from '@sa/hooks';
 import { SetupStoreId } from '@/enum';
 import { useRouterPush } from '@/hooks/common/router';
-import { fetchGetUserInfo, fetchLogin } from '@/service/api';
+import { fetchGetMemberInfo, fetchLogin } from '@/service/api';
 import { localStg } from '@/utils/storage';
 import { $t } from '@/locales';
 import { useRouteStore } from '../route';
@@ -20,11 +20,10 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
 
   const token = ref(getToken());
 
-  const userInfo: Api.Auth.UserInfo = reactive({
-    userId: '',
-    userName: '',
-    roles: [],
-    buttons: []
+  const userInfo: Api.Auth.MemberInfo = reactive({
+    id: '',
+    email: '',
+    roles: []
   });
 
   /** is super role in static route */
@@ -56,14 +55,14 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
   /**
    * Login
    *
-   * @param userName User name
+   * @param email User name
    * @param password Password
    * @param [redirect=true] Whether to redirect after login. Default is `true`
    */
-  async function login(userName: string, password: string, redirect = true) {
+  async function login(email: string, password: string, redirect = true) {
     startLoading();
 
-    const { data: loginToken, error } = await fetchLogin(userName, password);
+    const { data: loginToken, error } = await fetchLogin(email, password);
 
     if (!error) {
       const pass = await loginByToken(loginToken);
@@ -78,7 +77,7 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
         if (routeStore.isInitAuthRoute) {
           window.$notification?.success({
             title: $t('page.login.common.loginSuccess'),
-            content: $t('page.login.common.welcomeBack', { userName: userInfo.userName }),
+            content: $t('page.login.common.welcomeBack', { userName: userInfo.email }),
             duration: 4500
           });
         }
@@ -93,10 +92,9 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
   async function loginByToken(loginToken: Api.Auth.LoginToken) {
     // 1. stored in the localStorage, the later requests need it in headers
     localStg.set('token', loginToken.token);
-    localStg.set('refreshToken', loginToken.refreshToken);
 
     // 2. get user info
-    const pass = await getUserInfo();
+    const pass = await getMemberInfo();
 
     if (pass) {
       token.value = loginToken.token;
@@ -107,8 +105,8 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
     return false;
   }
 
-  async function getUserInfo() {
-    const { data: info, error } = await fetchGetUserInfo();
+  async function getMemberInfo() {
+    const { data: info, error } = await fetchGetMemberInfo();
 
     if (!error) {
       // update store
@@ -124,7 +122,7 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
     const hasToken = getToken();
 
     if (hasToken) {
-      const pass = await getUserInfo();
+      const pass = await getMemberInfo();
 
       if (!pass) {
         resetStore();

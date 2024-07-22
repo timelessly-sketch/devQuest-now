@@ -32,14 +32,10 @@ declare namespace Api {
     type CommonRecord<T = any> = {
       /** record id */
       id: number;
-      /** record creator */
-      createBy: string;
       /** record create time */
-      createTime: string;
-      /** record updater */
-      updateBy: string;
+      createAt: string;
       /** record update time */
-      updateTime: string;
+      updateAt: string;
       /** record status */
       status: EnableStatus | null;
     } & T;
@@ -53,14 +49,12 @@ declare namespace Api {
   namespace Auth {
     interface LoginToken {
       token: string;
-      refreshToken: string;
     }
 
-    interface UserInfo {
-      userId: string;
-      userName: string;
+    interface MemberInfo {
+      id: string;
+      email: string;
       roles: string[];
-      buttons: string[];
     }
   }
 
