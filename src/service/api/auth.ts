@@ -35,17 +35,16 @@ export function fetchLogin(email: string, password: string) {
   });
 }
 
-/** Get user info */
+/** Get member info */
 export function fetchGetMemberInfo() {
   return request<Api.Auth.MemberInfo>({ url: '/system/member/Info' });
 }
 
-/**
- * return custom backend error
- *
- * @param code error code
- * @param msg error message
- */
-export function fetchCustomBackendError(code: string, msg: string) {
-  return request({ url: '/auth/error', params: { code, msg } });
+/** Get member list */
+export function fetchGetMemberList(params?: Api.SystemManage.CommonSearchParams) {
+  return request<Api.SystemManage.MemberList>({
+    url: '/system/member/list',
+    method: 'get',
+    params
+  });
 }
