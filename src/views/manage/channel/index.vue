@@ -5,10 +5,11 @@ import { useAppStore } from '@/store/modules/app';
 import { enableStatusRecord, userGenderRecord } from '@/constants/business';
 import { useTable, useTableOperate } from '@/hooks/common/table';
 import { fetchChannelList } from '@/service/api';
+import ChannelOperateDrawer from '@/views/manage/channel/modules/channel-operate-drawer.vue';
 
 const appStore = useAppStore();
 
-const { columns, columnChecks, data, getData, loading, mobilePagination } = useTable({
+const { columns, columnChecks, data, getData, loading, mobilePagination, getDataByPage } = useTable({
   apiFn: fetchChannelList,
   showTotal: true,
   apiParams: {
@@ -128,7 +129,10 @@ const {
   handleEdit,
   checkedRowKeys,
   onBatchDeleted,
-  onDeleted
+  onDeleted,
+  drawerVisible,
+  operateType,
+  editingData
   // closeDrawer
 } = useTableOperate(data, getData);
 
@@ -176,6 +180,12 @@ function edit(id: number) {
         :row-key="row => row.id"
         :pagination="mobilePagination"
         class="sm:h-full"
+      />
+      <ChannelOperateDrawer
+        v-model:visible="drawerVisible"
+        :operate-type="operateType"
+        :row-data="editingData"
+        @submitted="getDataByPage"
       />
     </NCard>
   </div>

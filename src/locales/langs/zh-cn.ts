@@ -250,7 +250,25 @@ const local: App.I18n.Schema = {
         normal: '渠道类别',
         channelStatus: '渠道状态',
         createAt: '创建时间',
-        updateAt: '更新时间'
+        updateAt: '更新时间',
+        form: {
+          name: '请输入渠道名称',
+          baseUrl: '请输入渠道接口',
+          key: '请输入渠道秘钥',
+          models: '请选择渠道模型',
+          testModel: '请选择渠道测试模型',
+          normal: '请选择渠道类型',
+          order: '请选择渠道优先级',
+          channelStatus: '请选择渠道状态'
+        },
+        channelNormal: {
+          status: {
+            enable: '普通渠道',
+            disable: '兜底渠道'
+          }
+        },
+        addChannel: '添加渠道',
+        editChannel: '添加渠道'
       },
       user: {
         title: '用户列表',

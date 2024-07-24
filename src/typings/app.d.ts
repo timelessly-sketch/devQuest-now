@@ -477,6 +477,24 @@ declare namespace App {
             createAt: string;
             updateAt: string;
             normal: string;
+            form: {
+              name: string;
+              baseUrl: string;
+              key: string;
+              models: string;
+              testModel: string;
+              order: string;
+              channelStatus: string;
+              normal: string;
+            };
+            channelNormal: {
+              status: {
+                enable: string;
+                disable: string;
+              };
+            };
+            addChannel: string;
+            editChannel: string;
           };
           user: {
             title: string;

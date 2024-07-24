@@ -250,7 +250,25 @@ const local: App.I18n.Schema = {
         channelStatus: 'channelStatus',
         normal: 'normal',
         createAt: 'create at',
-        updateAt: 'update at'
+        updateAt: 'update at',
+        form: {
+          name: 'Please enter channel name',
+          baseUrl: 'Please enter channel name',
+          key: 'Please enter channel key',
+          models: 'Please enter channel models',
+          testModel: 'Please enter test models',
+          normal: 'Please enter normal models',
+          order: 'Please enter channel order',
+          channelStatus: 'Please enter channel status'
+        },
+        channelNormal: {
+          status: {
+            enable: 'normal',
+            disable: 'disable normal'
+          }
+        },
+        addChannel: 'Add channel',
+        editChannel: 'Edit channel'
       },
       user: {
         title: 'User List',
