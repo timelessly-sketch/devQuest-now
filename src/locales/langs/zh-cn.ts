@@ -239,6 +239,19 @@ const local: App.I18n.Schema = {
           disable: '禁用'
         }
       },
+      channel: {
+        title: '渠道列表',
+        name: '渠道名称',
+        baseUrl: '渠道接口',
+        key: '渠道秘钥',
+        models: '模型',
+        testModel: '测试模型',
+        order: '排序',
+        normal: '渠道类别',
+        channelStatus: '渠道状态',
+        createAt: '创建时间',
+        updateAt: '更新时间'
+      },
       user: {
         title: '用户列表',
         userName: '用户名',

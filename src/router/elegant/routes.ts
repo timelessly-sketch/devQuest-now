@@ -106,7 +106,7 @@ export const generatedRoutes: GeneratedRoute[] = [
           title: 'manage_channel',
           i18nKey: 'route.manage_channel',
           icon: 'material-symbols:route',
-          order: 1,
+          order: 1
         }
       },
       {

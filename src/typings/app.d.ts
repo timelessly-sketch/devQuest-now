@@ -465,6 +465,19 @@ declare namespace App {
               disable: string;
             };
           };
+          channel: {
+            title: string;
+            name: string;
+            baseUrl: string;
+            key: string;
+            models: string;
+            testModel: string;
+            order: string;
+            channelStatus: string;
+            createAt: string;
+            updateAt: string;
+            normal: string;
+          };
           user: {
             title: string;
             userName: string;

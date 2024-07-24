@@ -99,5 +99,23 @@ declare namespace Api {
 
     /** user list */
     type MemberList = Common.PaginatingQueryRecord<Member>;
+
+    /**
+     * 1. 普通渠道
+     * 2. 兜底渠道
+     */
+    type ChannelType = '1' | '2';
+
+    type Channel = Common.CommonRecord<{
+      name: string;
+      baseUrl: string;
+      key: string;
+      models: string;
+      testModel: string;
+      order: string;
+      normal: ChannelType | null;
+    }>;
+
+    type ChannelList = Common.PaginatingQueryRecord<Channel>;
   }
 }

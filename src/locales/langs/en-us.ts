@@ -239,6 +239,19 @@ const local: App.I18n.Schema = {
           disable: 'Disable'
         }
       },
+      channel: {
+        title: 'title name',
+        name: 'channel name',
+        baseUrl: 'baseUrl',
+        key: 'key',
+        models: 'models',
+        testModel: 'test models',
+        order: 'order',
+        channelStatus: 'channelStatus',
+        normal: 'normal',
+        createAt: 'create at',
+        updateAt: 'update at'
+      },
       user: {
         title: 'User List',
         userName: 'User Name',

@@ -57,3 +57,11 @@ export function fetchInsertChannel(params?: Api.SystemManage.CommonSearchParams)
     params
   });
 }
+
+export function fetchChannelList(params?: Api.SystemManage.CommonSearchParams) {
+  return request<Api.SystemManage.ChannelList>({
+    url: '/system/channel/list',
+    method: 'get',
+    params
+  });
+}
