@@ -471,7 +471,6 @@ declare namespace App {
             baseUrl: string;
             key: string;
             models: string;
-            testModel: string;
             order: string;
             channelStatus: string;
             createAt: string;
@@ -482,7 +481,6 @@ declare namespace App {
               baseUrl: string;
               key: string;
               models: string;
-              testModel: string;
               order: string;
               channelStatus: string;
               normal: string;

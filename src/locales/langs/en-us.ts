@@ -245,7 +245,6 @@ const local: App.I18n.Schema = {
         baseUrl: 'baseUrl',
         key: 'key',
         models: 'models',
-        testModel: 'test models',
         order: 'order',
         channelStatus: 'channelStatus',
         normal: 'normal',
@@ -256,7 +255,6 @@ const local: App.I18n.Schema = {
           baseUrl: 'Please enter channel name',
           key: 'Please enter channel key',
           models: 'Please enter channel models',
-          testModel: 'Please enter test models',
           normal: 'Please enter normal models',
           order: 'Please enter channel order',
           channelStatus: 'Please enter channel status'

@@ -122,9 +122,6 @@ watch(visible, () => {
         <NFormItem :label="$t('page.manage.channel.models')" path="models">
           <NInput v-model:value="model.models" :placeholder="$t('page.manage.channel.form.models')" />
         </NFormItem>
-        <NFormItem :label="$t('page.manage.channel.testModel')" path="testModel">
-          <NInput v-model:value="model.testModel" :placeholder="$t('page.manage.channel.form.testModel')" />
-        </NFormItem>
         <NFormItem :label="$t('page.manage.channel.channelStatus')" path="channelStatus">
           <NRadioGroup v-model:value="model.status">
             <NRadio v-for="item in enableStatusOptions" :key="item.value" :value="item.value" :label="$t(item.label)" />

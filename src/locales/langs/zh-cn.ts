@@ -245,7 +245,6 @@ const local: App.I18n.Schema = {
         baseUrl: '渠道接口',
         key: '渠道秘钥',
         models: '模型',
-        testModel: '测试模型',
         order: '排序',
         normal: '渠道类别',
         channelStatus: '渠道状态',
@@ -256,7 +255,6 @@ const local: App.I18n.Schema = {
           baseUrl: '请输入渠道接口',
           key: '请输入渠道秘钥',
           models: '请选择渠道模型',
-          testModel: '请选择渠道测试模型',
           normal: '请选择渠道类型',
           order: '请选择渠道优先级',
           channelStatus: '请选择渠道状态'

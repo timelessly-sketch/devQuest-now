@@ -53,12 +53,6 @@ const { columns, columnChecks, data, getData, loading, mobilePagination, getData
       minWidth: 100
     },
     {
-      key: 'testModel',
-      title: $t('page.manage.channel.testModel'),
-      align: 'center',
-      minWidth: 100
-    },
-    {
       key: 'status',
       title: $t('page.manage.channel.channelStatus'),
       align: 'center',
