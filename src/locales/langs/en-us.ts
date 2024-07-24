@@ -152,7 +152,8 @@ const local: App.I18n.Schema = {
     home: 'Home',
     about: 'About',
     manage: 'Manage',
-    manage_user: 'Manage User'
+    manage_user: 'Manage User',
+    manage_channel: 'Manage Channel'
   },
   page: {
     login: {

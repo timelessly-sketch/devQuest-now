@@ -99,6 +99,17 @@ export const generatedRoutes: GeneratedRoute[] = [
     },
     children: [
       {
+        name: 'manage_channel',
+        path: '/manage/channel',
+        component: 'view.manage_channel',
+        meta: {
+          title: 'manage_channel',
+          i18nKey: 'route.manage_channel',
+          icon: 'material-symbols:route',
+          order: 1,
+        }
+      },
+      {
         name: 'manage_user',
         path: '/manage/user',
         component: 'view.manage_user',
@@ -106,7 +117,7 @@ export const generatedRoutes: GeneratedRoute[] = [
           title: 'manage_user',
           i18nKey: 'route.manage_user',
           icon: 'ic:round-manage-accounts',
-          order: 1
+          order: 2
         }
       }
     ]

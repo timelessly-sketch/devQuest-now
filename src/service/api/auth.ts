@@ -48,3 +48,12 @@ export function fetchGetMemberList(params?: Api.SystemManage.CommonSearchParams)
     params
   });
 }
+
+// 如下为渠道模块
+export function fetchInsertChannel(params?: Api.SystemManage.CommonSearchParams) {
+  return request<Api.SystemManage.MemberList>({
+    url: '/system/channel/edit',
+    method: 'post',
+    params
+  });
+}

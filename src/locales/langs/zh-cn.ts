@@ -152,6 +152,7 @@ const local: App.I18n.Schema = {
     home: '首页',
     manage: '系统管理',
     manage_user: '用户管理',
+    manage_channel: '渠道管理',
     about: '关于'
   },
   page: {
