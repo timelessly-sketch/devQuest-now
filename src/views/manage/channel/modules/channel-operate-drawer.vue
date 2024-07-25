@@ -3,6 +3,7 @@ import { computed, reactive, watch } from 'vue';
 import { useNaiveForm } from '@/hooks/common/form';
 import { $t } from '@/locales';
 import { channelNormalOptions, enableStatusOptions } from '@/constants/business';
+import { fetchInsertChannel } from '@/service/api';
 
 defineOptions({
   name: 'ChannelOperateDrawer'
@@ -37,7 +38,7 @@ const title = computed(() => {
   return titles[props.operateType];
 });
 
-type Model = Pick<Api.SystemManage.Channel, 'name' | 'baseUrl' | 'key' | 'models' | 'status' | 'normal'>;
+type Model = Pick<Api.SystemManage.Channel, 'name' | 'baseUrl' | 'key' | 'models' | 'status' | 'normal' | 'id'>;
 
 const model: Model = reactive(createDefaultModel());
 
@@ -48,33 +49,10 @@ function createDefaultModel(): Model {
     key: '',
     models: '',
     status: '1',
-    normal: null
+    normal: '1',
+    id: 0
   };
 }
-
-/** the enabled role options */
-// const roleOptions = ref<CommonType.Option<string>[]>([]);
-
-// async function getRoleOptions() {
-//   const { error, data } = await fetchGetAllRoles();
-//
-//   if (!error) {
-//     const options = data.map(item => ({
-//       label: item.roleName,
-//       value: item.roleCode
-//     }));
-//
-//     // the mock data does not have the roleCode, so fill it
-//     // if the real request, remove the following code
-//     const userRoleOptions = model.userRoles.map(item => ({
-//       label: item,
-//       value: item
-//     }));
-//     // end
-//
-//     roleOptions.value = [...userRoleOptions, ...options];
-//   }
-// }
 
 function handleInitModel() {
   Object.assign(model, createDefaultModel());
@@ -90,10 +68,12 @@ function closeDrawer() {
 
 async function handleSubmit() {
   await validate();
-  // request
-  window.$message?.success($t('common.updateSuccess'));
-  closeDrawer();
-  emit('submitted');
+  const { error } = await fetchInsertChannel(model);
+  if (!error) {
+    window.$message?.success($t('common.updateSuccess'));
+    closeDrawer();
+    emit('submitted');
+  }
 }
 
 watch(visible, () => {

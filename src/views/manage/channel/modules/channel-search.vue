@@ -31,9 +31,6 @@ async function search() {
       <NCollapseItem :title="$t('common.search')" name="user-search">
         <NForm :model="model" label-placement="left" :label-width="80">
           <NGrid responsive="screen" item-responsive>
-            <NFormItemGi span="24 s:12 m:6" :label="$t('page.manage.channel.models')" path="models" class="pr-24px">
-              <NInput v-model:value="model.models" :placeholder="$t('page.manage.channel.form.models')" />
-            </NFormItemGi>
             <NFormItemGi
               span="24 s:12 m:6"
               :label="$t('page.manage.channel.channelStatus')"

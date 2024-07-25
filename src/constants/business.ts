@@ -15,7 +15,7 @@ export const userGenderRecord: Record<Api.SystemManage.MemberGender, App.I18n.I1
 
 export const userGenderOptions = transformRecordToOption(userGenderRecord);
 
-export const channelNormalRecord: Record<Api.SystemManage.ChannelType, App.I18n.I18nKey> = {
+export const channelNormalRecord: Record<Api.SystemManage.ChannelNormal, App.I18n.I18nKey> = {
   '1': 'page.manage.channel.channelNormal.status.enable',
   '2': 'page.manage.channel.channelNormal.status.disable'
 };

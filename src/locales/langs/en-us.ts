@@ -250,6 +250,7 @@ const local: App.I18n.Schema = {
         normal: 'normal',
         createAt: 'create at',
         updateAt: 'update at',
+        channelType: 'channel type',
         form: {
           name: 'Please enter channel name',
           baseUrl: 'Please enter channel name',
@@ -257,7 +258,8 @@ const local: App.I18n.Schema = {
           models: 'Please enter channel models',
           normal: 'Please enter normal models',
           order: 'Please enter channel order',
-          channelStatus: 'Please enter channel status'
+          channelStatus: 'Please enter channel status',
+          channelType: 'channel type'
         },
         channelNormal: {
           status: {

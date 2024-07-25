@@ -104,19 +104,25 @@ declare namespace Api {
      * 1. 普通渠道
      * 2. 兜底渠道
      */
-    type ChannelType = '1' | '2';
+    type ChannelNormal = '1' | '2';
 
     type Channel = Common.CommonRecord<{
+      id: number;
       name: string;
       baseUrl: string;
       key: string;
       models: string;
       order: string;
-      normal: ChannelType | null;
+      normal: ChannelNormal | null;
     }>;
 
     type ChannelSearchParams = CommonType.RecordNullable<
       Pick<Api.SystemManage.Channel, 'models' | 'status' | 'normal'> & CommonSearchParams
+    >;
+
+    type ChannelEditParams = Pick<
+      Api.SystemManage.Channel,
+      'name' | 'baseUrl' | 'key' | 'models' | 'status' | 'normal' | 'id'
     >;
 
     type ChannelList = Common.PaginatingQueryRecord<Channel>;

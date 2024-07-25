@@ -476,6 +476,7 @@ declare namespace App {
             createAt: string;
             updateAt: string;
             normal: string;
+            channelType: string;
             form: {
               name: string;
               baseUrl: string;
@@ -484,6 +485,7 @@ declare namespace App {
               order: string;
               channelStatus: string;
               normal: string;
+              channelType: string;
             };
             channelNormal: {
               status: {

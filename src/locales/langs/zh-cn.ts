@@ -250,6 +250,7 @@ const local: App.I18n.Schema = {
         channelStatus: '渠道状态',
         createAt: '创建时间',
         updateAt: '更新时间',
+        channelType: '渠道类型',
         form: {
           name: '请输入渠道名称',
           baseUrl: '请输入渠道接口',
@@ -257,7 +258,8 @@ const local: App.I18n.Schema = {
           models: '请选择渠道模型',
           normal: '请选择渠道类型',
           order: '请选择渠道优先级',
-          channelStatus: '请选择渠道状态'
+          channelStatus: '请选择渠道状态',
+          channelType: '渠道类型'
         },
         channelNormal: {
           status: {

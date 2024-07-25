@@ -50,8 +50,8 @@ export function fetchGetMemberList(params?: Api.SystemManage.CommonSearchParams)
 }
 
 // 如下为渠道模块
-export function fetchInsertChannel(params?: Api.SystemManage.CommonSearchParams) {
-  return request<Api.SystemManage.MemberList>({
+export function fetchInsertChannel(params?: Api.SystemManage.ChannelEditParams) {
+  return request({
     url: '/system/channel/edit',
     method: 'post',
     params
@@ -63,5 +63,12 @@ export function fetchChannelList(params?: Api.SystemManage.CommonSearchParams) {
     url: '/system/channel/list',
     method: 'get',
     params
+  });
+}
+
+export function fetchChannelDelete(id: number) {
+  return request({
+    url: `/system/channel/delete/${id}`,
+    method: 'delete'
   });
 }

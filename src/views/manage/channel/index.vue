@@ -2,9 +2,9 @@
 import { NButton, NPopconfirm, NTag } from 'naive-ui';
 import { $t } from '@/locales';
 import { useAppStore } from '@/store/modules/app';
-import { enableStatusRecord, userGenderRecord } from '@/constants/business';
+import { channelNormalRecord, enableStatusRecord } from '@/constants/business';
 import { useTable, useTableOperate } from '@/hooks/common/table';
-import { fetchChannelList } from '@/service/api';
+import { fetchChannelDelete, fetchChannelList } from '@/service/api';
 import ChannelOperateDrawer from '@/views/manage/channel/modules/channel-operate-drawer.vue';
 import ChannelSearch from '@/views/manage/channel/modules/channel-search.vue';
 
@@ -93,12 +93,12 @@ const {
           return null;
         }
 
-        const tagMap: Record<Api.SystemManage.ChannelType, NaiveUI.ThemeColor> = {
+        const tagMap: Record<Api.SystemManage.ChannelNormal, NaiveUI.ThemeColor> = {
           1: 'primary',
           2: 'error'
         };
 
-        const label = $t(userGenderRecord[row.normal]);
+        const label = $t(channelNormalRecord[row.normal]);
 
         return <NTag type={tagMap[row.normal]}>{label}</NTag>;
       }
@@ -148,11 +148,11 @@ async function handleBatchDelete() {
   onBatchDeleted();
 }
 
-function handleDelete(id: number) {
-  // request
-  console.log(id);
-
-  onDeleted();
+async function handleDelete(id: number) {
+  const { error } = await fetchChannelDelete(id);
+  if (!error) {
+    await onDeleted();
+  }
 }
 
 function edit(id: number) {
