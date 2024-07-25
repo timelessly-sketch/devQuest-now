@@ -2,6 +2,7 @@ import { computed } from 'vue';
 import { useCountDown, useLoading } from '@sa/hooks';
 import { $t } from '@/locales';
 import { REG_EMAIL } from '@/constants/reg';
+import { fetchMemberSendMsg } from '@/service/api';
 
 export function useCaptcha() {
   const { loading, startLoading, endLoading } = useLoading();
@@ -45,16 +46,17 @@ export function useCaptcha() {
     if (!valid || loading.value) {
       return;
     }
-
     startLoading();
+
+    const { error } = await fetchMemberSendMsg({ email });
+    if (!error) {
+      window.$message?.success?.($t('page.login.codeLogin.sendCodeSuccess'));
+    }
 
     // request
     await new Promise(resolve => {
       setTimeout(resolve, 500);
     });
-
-    window.$message?.success?.($t('page.login.codeLogin.sendCodeSuccess'));
-
     start();
 
     endLoading();

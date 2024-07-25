@@ -49,6 +49,14 @@ export function fetchGetMemberList(params?: Api.SystemManage.CommonSearchParams)
   });
 }
 
+export function fetchMemberSendMsg(params: { email: string }) {
+  return request({
+    url: '/system/member/sendMsg',
+    method: 'post',
+    params
+  });
+}
+
 // 如下为渠道模块
 export function fetchInsertChannel(params?: Api.SystemManage.ChannelEditParams) {
   return request({
