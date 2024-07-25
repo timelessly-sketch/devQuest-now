@@ -37,7 +37,7 @@ const title = computed(() => {
   return titles[props.operateType];
 });
 
-type Model = Pick<Api.SystemManage.Channel, 'name' | 'baseUrl' | 'key' | 'models' | 'testModel' | 'status' | 'normal'>;
+type Model = Pick<Api.SystemManage.Channel, 'name' | 'baseUrl' | 'key' | 'models' | 'status' | 'normal'>;
 
 const model: Model = reactive(createDefaultModel());
 
@@ -47,7 +47,6 @@ function createDefaultModel(): Model {
     baseUrl: '',
     key: '',
     models: '',
-    testModel: '',
     status: '1',
     normal: null
   };

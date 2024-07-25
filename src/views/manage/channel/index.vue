@@ -6,10 +6,21 @@ import { enableStatusRecord, userGenderRecord } from '@/constants/business';
 import { useTable, useTableOperate } from '@/hooks/common/table';
 import { fetchChannelList } from '@/service/api';
 import ChannelOperateDrawer from '@/views/manage/channel/modules/channel-operate-drawer.vue';
+import ChannelSearch from '@/views/manage/channel/modules/channel-search.vue';
 
 const appStore = useAppStore();
 
-const { columns, columnChecks, data, getData, loading, mobilePagination, getDataByPage } = useTable({
+const {
+  columns,
+  columnChecks,
+  data,
+  getData,
+  loading,
+  mobilePagination,
+  getDataByPage,
+  searchParams,
+  resetSearchParams
+} = useTable({
   apiFn: fetchChannelList,
   showTotal: true,
   apiParams: {
@@ -151,7 +162,13 @@ function edit(id: number) {
 
 <template>
   <div class="min-h-500px flex-col-stretch gap-16px overflow-hidden lt-sm:overflow-auto">
-    <NCard :title="$t('page.manage.user.title')" :bordered="false" size="small" class="sm:flex-1-hidden card-wrapper">
+    <ChannelSearch v-model:model="searchParams" @reset="resetSearchParams" @search="getDataByPage" />
+    <NCard
+      :title="$t('page.manage.channel.title')"
+      :bordered="false"
+      size="small"
+      class="sm:flex-1-hidden card-wrapper"
+    >
       <template #header-extra>
         <TableHeaderOperation
           v-model:columns="columnChecks"

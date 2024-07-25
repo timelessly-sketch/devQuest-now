@@ -111,10 +111,13 @@ declare namespace Api {
       baseUrl: string;
       key: string;
       models: string;
-      testModel: string;
       order: string;
       normal: ChannelType | null;
     }>;
+
+    type ChannelSearchParams = CommonType.RecordNullable<
+      Pick<Api.SystemManage.Channel, 'models' | 'status' | 'normal'> & CommonSearchParams
+    >;
 
     type ChannelList = Common.PaginatingQueryRecord<Channel>;
   }
