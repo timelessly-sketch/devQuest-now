@@ -470,7 +470,7 @@ declare namespace App {
             name: string;
             baseUrl: string;
             key: string;
-            models: string;
+            model: string;
             order: string;
             channelStatus: string;
             createAt: string;

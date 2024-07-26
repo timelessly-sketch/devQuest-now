@@ -244,7 +244,7 @@ const local: App.I18n.Schema = {
         name: '渠道名称',
         baseUrl: '渠道接口',
         key: '渠道秘钥',
-        models: '模型',
+        model: '模型',
         order: '排序',
         normal: '渠道类别',
         channelStatus: '渠道状态',

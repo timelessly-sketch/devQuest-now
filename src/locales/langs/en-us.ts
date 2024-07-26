@@ -244,7 +244,7 @@ const local: App.I18n.Schema = {
         name: 'channel name',
         baseUrl: 'baseUrl',
         key: 'key',
-        models: 'models',
+        model: 'models',
         order: 'order',
         channelStatus: 'channelStatus',
         normal: 'normal',

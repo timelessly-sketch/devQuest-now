@@ -38,7 +38,7 @@ const title = computed(() => {
   return titles[props.operateType];
 });
 
-type Model = Pick<Api.SystemManage.Channel, 'name' | 'baseUrl' | 'key' | 'models' | 'status' | 'normal' | 'id'>;
+type Model = Pick<Api.SystemManage.Channel, 'name' | 'baseUrl' | 'key' | 'model' | 'status' | 'normal' | 'id'>;
 
 const model: Model = reactive(createDefaultModel());
 
@@ -47,7 +47,7 @@ function createDefaultModel(): Model {
     name: '',
     baseUrl: '',
     key: '',
-    models: '',
+    model: '',
     status: '1',
     normal: '1',
     id: 0
@@ -99,7 +99,7 @@ watch(visible, () => {
           <NInput v-model:value="model.key" :placeholder="$t('page.manage.channel.form.key')" />
         </NFormItem>
         <NFormItem :label="$t('page.manage.channel.models')" path="models">
-          <NInput v-model:value="model.models" :placeholder="$t('page.manage.channel.form.models')" />
+          <NInput v-model:value="model.model" :placeholder="$t('page.manage.channel.form.model')" />
         </NFormItem>
         <NFormItem :label="$t('page.manage.channel.channelStatus')" path="channelStatus">
           <NRadioGroup v-model:value="model.status">

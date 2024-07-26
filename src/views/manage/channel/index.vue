@@ -58,8 +58,8 @@ const {
       minWidth: 100
     },
     {
-      key: 'models',
-      title: $t('page.manage.channel.models'),
+      key: 'model',
+      title: $t('page.manage.channel.model'),
       align: 'center',
       minWidth: 100
     },
