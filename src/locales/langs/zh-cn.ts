@@ -153,6 +153,7 @@ const local: App.I18n.Schema = {
     manage: '系统管理',
     manage_user: '用户管理',
     manage_channel: '渠道管理',
+    manage_token: '令牌管理',
     about: '关于'
   },
   page: {
@@ -255,7 +256,7 @@ const local: App.I18n.Schema = {
           name: '请输入渠道名称',
           baseUrl: '请输入渠道接口',
           key: '请输入渠道秘钥',
-          models: '请选择渠道模型',
+          model: '请输入渠道模型',
           normal: '请选择渠道类型',
           order: '请选择渠道优先级',
           channelStatus: '请选择渠道状态',
@@ -269,6 +270,25 @@ const local: App.I18n.Schema = {
         },
         addChannel: '添加渠道',
         editChannel: '添加渠道'
+      },
+      token: {
+        title: '令牌列表',
+        name: '令牌名称',
+        key: '令牌Key',
+        utilizedQuota: '已用额度',
+        remainingQuota: '剩余额度',
+        tokenStatus: '令牌状态',
+        createAt: '创建时间',
+        updateAt: '更新时间',
+        form: {
+          name: '请输入令牌名称',
+          key: '请输入令牌key',
+          utilizedQuota: '请输入已用额度',
+          remainingQuota: '请输入剩余额度',
+          tokenStatus: '请选择令牌状态'
+        },
+        addToken: '添加令牌',
+        editToken: '编辑令牌'
       },
       user: {
         title: '用户列表',

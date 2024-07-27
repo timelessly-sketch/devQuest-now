@@ -110,6 +110,17 @@ export const generatedRoutes: GeneratedRoute[] = [
         }
       },
       {
+        name: 'manage_token',
+        path: '/manage/token',
+        component: 'view.manage_token',
+        meta: {
+          title: 'manage_token',
+          i18nKey: 'route.manage_token',
+          icon: 'carbon:user-role',
+          order: 2
+        }
+      },
+      {
         name: 'manage_user',
         path: '/manage/user',
         component: 'view.manage_user',

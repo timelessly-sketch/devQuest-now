@@ -481,7 +481,7 @@ declare namespace App {
               name: string;
               baseUrl: string;
               key: string;
-              models: string;
+              model: string;
               order: string;
               channelStatus: string;
               normal: string;
@@ -495,6 +495,25 @@ declare namespace App {
             };
             addChannel: string;
             editChannel: string;
+          };
+          token: {
+            title: string;
+            name: string;
+            key: string;
+            utilizedQuota: string;
+            remainingQuota: string;
+            tokenStatus: string;
+            createAt: string;
+            updateAt: string;
+            form: {
+              name: string;
+              key: string;
+              utilizedQuota: string;
+              remainingQuota: string;
+              tokenStatus: string;
+            };
+            addToken: string;
+            editToken: string;
           };
           user: {
             title: string;

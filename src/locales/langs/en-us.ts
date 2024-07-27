@@ -153,7 +153,8 @@ const local: App.I18n.Schema = {
     about: 'About',
     manage: 'Manage',
     manage_user: 'Manage User',
-    manage_channel: 'Manage Channel'
+    manage_channel: 'Manage Channel',
+    manage_token: 'Manage Token'
   },
   page: {
     login: {
@@ -255,7 +256,7 @@ const local: App.I18n.Schema = {
           name: 'Please enter channel name',
           baseUrl: 'Please enter channel name',
           key: 'Please enter channel key',
-          models: 'Please enter channel models',
+          model: 'Please enter channel models',
           normal: 'Please enter normal models',
           order: 'Please enter channel order',
           channelStatus: 'Please enter channel status',
@@ -269,6 +270,25 @@ const local: App.I18n.Schema = {
         },
         addChannel: 'Add channel',
         editChannel: 'Edit channel'
+      },
+      token: {
+        title: 'token title',
+        name: 'token name',
+        key: 'token key',
+        utilizedQuota: 'token utilizedQuota',
+        remainingQuota: 'token remainingQuota',
+        tokenStatus: 'token status',
+        createAt: 'create at',
+        updateAt: 'update at',
+        form: {
+          name: 'Please enter channel name',
+          key: 'Please enter channel key',
+          utilizedQuota: 'token utilizedQuota',
+          remainingQuota: 'token remainingQuota',
+          tokenStatus: 'token status'
+        },
+        editToken: 'edit token',
+        addToken: 'add token'
       },
       user: {
         title: 'User List',

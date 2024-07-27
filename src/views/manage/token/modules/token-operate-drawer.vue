@@ -2,18 +2,18 @@
 import { computed, reactive, watch } from 'vue';
 import { useNaiveForm } from '@/hooks/common/form';
 import { $t } from '@/locales';
-import { channelNormalOptions, enableStatusOptions } from '@/constants/business';
-import { fetchInsertChannel } from '@/service/api';
+import { enableStatusOptions } from '@/constants/business';
+import { fetchTokenEdit } from '@/service/api';
 
 defineOptions({
-  name: 'ChannelOperateDrawer'
+  name: 'TokenOperateDrawer'
 });
 
 interface Props {
   /** the type of operation */
   operateType: NaiveUI.TableOperateType;
   /** the edit row data */
-  rowData?: Api.SystemManage.Channel | null;
+  rowData?: Api.SystemManage.Token | null;
 }
 
 const props = defineProps<Props>();
@@ -32,29 +32,27 @@ const { formRef, validate, restoreValidation } = useNaiveForm();
 
 const title = computed(() => {
   const titles: Record<NaiveUI.TableOperateType, string> = {
-    add: $t('page.manage.channel.addChannel'),
-    edit: $t('page.manage.channel.editChannel')
+    add: $t('page.manage.token.addToken'),
+    edit: $t('page.manage.token.editToken')
   };
   return titles[props.operateType];
 });
 
 type Model = Pick<
-  Api.SystemManage.Channel,
-  'name' | 'order' | 'baseUrl' | 'key' | 'model' | 'status' | 'normal' | 'id'
+  Api.SystemManage.TokenEditParams,
+  'name' | 'key' | 'status' | 'utilizedQuota' | 'remainingQuota' | 'id'
 >;
 
 const model: Model = reactive(createDefaultModel());
 
 function createDefaultModel(): Model {
   return {
+    id: 0,
     name: '',
-    baseUrl: '',
     key: '',
-    model: '',
     status: '1',
-    normal: '1',
-    order: 99,
-    id: 0
+    utilizedQuota: 0,
+    remainingQuota: 0
   };
 }
 
@@ -72,7 +70,7 @@ function closeDrawer() {
 
 async function handleSubmit() {
   await validate();
-  const { error } = await fetchInsertChannel(model);
+  const { error } = await fetchTokenEdit(model);
   if (!error) {
     window.$message?.success($t('common.updateSuccess'));
     closeDrawer();
@@ -84,7 +82,6 @@ watch(visible, () => {
   if (visible.value) {
     handleInitModel();
     restoreValidation();
-    // getRoleOptions();
   }
 });
 </script>
@@ -93,34 +90,25 @@ watch(visible, () => {
   <NDrawer v-model:show="visible" display-directive="show" :width="360">
     <NDrawerContent :title="title" :native-scrollbar="false" closable>
       <NForm ref="formRef" :model="model">
-        <NFormItem :label="$t('page.manage.channel.name')" path="name">
-          <NInput v-model:value="model.name" :placeholder="$t('page.manage.channel.form.name')" />
+        <NFormItem :label="$t('page.manage.token.name')" path="name">
+          <NInput v-model:value="model.name" :disabled="true" :placeholder="$t('page.manage.token.form.name')" />
         </NFormItem>
-        <NFormItem :label="$t('page.manage.channel.baseUrl')" path="baseUrl">
-          <NInput v-model:value="model.baseUrl" :placeholder="$t('page.manage.channel.form.baseUrl')" />
+        <NFormItem :label="$t('page.manage.token.key')" path="key">
+          <NInput v-model:value="model.key" :disabled="true" :placeholder="$t('page.manage.token.form.key')" />
         </NFormItem>
-        <NFormItem :label="$t('page.manage.channel.key')" path="key">
-          <NInput v-model:value="model.key" :placeholder="$t('page.manage.channel.form.key')" />
+        <NFormItem :label="$t('page.manage.token.utilizedQuota')" path="utilizedQuota">
+          <NInputNumber v-model:value="model.utilizedQuota">
+            <template #prefix>$</template>
+          </NInputNumber>
         </NFormItem>
-        <NFormItem :label="$t('page.manage.channel.model')" path="models">
-          <NInput v-model:value="model.model" :placeholder="$t('page.manage.channel.form.model')" />
+        <NFormItem :label="$t('page.manage.token.remainingQuota')" path="remainingQuota">
+          <NInputNumber v-model:value="model.remainingQuota">
+            <template #prefix>$</template>
+          </NInputNumber>
         </NFormItem>
-        <NFormItem :label="$t('page.manage.channel.order')" path="order">
-          <NInputNumber v-model:value="model.order"></NInputNumber>
-        </NFormItem>
-        <NFormItem :label="$t('page.manage.channel.channelStatus')" path="channelStatus">
+        <NFormItem :label="$t('page.manage.token.tokenStatus')" path="status">
           <NRadioGroup v-model:value="model.status">
             <NRadio v-for="item in enableStatusOptions" :key="item.value" :value="item.value" :label="$t(item.label)" />
-          </NRadioGroup>
-        </NFormItem>
-        <NFormItem :label="$t('page.manage.channel.normal')" path="normal">
-          <NRadioGroup v-model:value="model.normal">
-            <NRadio
-              v-for="item in channelNormalOptions"
-              :key="item.value"
-              :value="item.value"
-              :label="$t(item.label)"
-            />
           </NRadioGroup>
         </NFormItem>
       </NForm>

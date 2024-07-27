@@ -1,12 +1,11 @@
 <script setup lang="tsx">
-import { NButton, NPopconfirm, NTag } from 'naive-ui';
+import { NButton, NTag } from 'naive-ui';
 import { $t } from '@/locales';
 import { useAppStore } from '@/store/modules/app';
-import { channelNormalRecord, enableStatusRecord } from '@/constants/business';
+import { enableStatusRecord } from '@/constants/business';
 import { useTable, useTableOperate } from '@/hooks/common/table';
-import { fetchChannelDelete, fetchChannelList } from '@/service/api';
-import ChannelOperateDrawer from '@/views/manage/channel/modules/channel-operate-drawer.vue';
-import ChannelSearch from '@/views/manage/channel/modules/channel-search.vue';
+import { fetchTokenList } from '@/service/api';
+import TokenOperateDrawer from '@/views/manage/token/modules/token-operate-drawer.vue';
 
 const appStore = useAppStore();
 
@@ -17,15 +16,17 @@ const {
   getData,
   loading,
   mobilePagination,
-  getDataByPage,
-  searchParams,
-  resetSearchParams
+  getDataByPage
+  // searchParams,
+  // resetSearchParams
 } = useTable({
-  apiFn: fetchChannelList,
+  apiFn: fetchTokenList,
   showTotal: true,
   apiParams: {
     current: 1,
-    size: 10
+    size: 10,
+    name: null,
+    status: null
   },
   columns: () => [
     {
@@ -41,37 +42,37 @@ const {
     },
     {
       key: 'name',
-      title: $t('page.manage.channel.name'),
+      title: $t('page.manage.token.name'),
       align: 'center',
-      width: 100
-    },
-    {
-      key: 'baseUrl',
-      title: $t('page.manage.channel.baseUrl'),
-      align: 'center',
-      width: 180
+      width: 200
     },
     {
       key: 'key',
-      title: $t('page.manage.channel.key'),
+      title: $t('page.manage.token.key'),
       align: 'center',
-      minWidth: 100
+      minWidth: 400
     },
     {
-      key: 'model',
-      title: $t('page.manage.channel.model'),
-      align: 'center',
-      width: 180
-    },
-    {
-      key: 'order',
-      title: $t('page.manage.channel.order'),
+      key: 'utilizedQuota',
+      title: $t('page.manage.token.utilizedQuota'),
       align: 'center',
       width: 80
     },
     {
+      key: 'remainingQuota',
+      title: $t('page.manage.token.remainingQuota'),
+      align: 'center',
+      width: 80
+    },
+    {
+      key: 'updateAt',
+      title: $t('page.manage.token.updateAt'),
+      align: 'center',
+      width: 200
+    },
+    {
       key: 'status',
-      title: $t('page.manage.channel.channelStatus'),
+      title: $t('page.manage.token.tokenStatus'),
       align: 'center',
       width: 100,
       render: row => {
@@ -90,26 +91,6 @@ const {
       }
     },
     {
-      key: 'normal',
-      title: $t('page.manage.channel.normal'),
-      align: 'center',
-      width: 100,
-      render: row => {
-        if (row.normal === null) {
-          return null;
-        }
-
-        const tagMap: Record<Api.SystemManage.ChannelNormal, NaiveUI.ThemeColor> = {
-          1: 'primary',
-          2: 'error'
-        };
-
-        const label = $t(channelNormalRecord[row.normal]);
-
-        return <NTag type={tagMap[row.normal]}>{label}</NTag>;
-      }
-    },
-    {
       key: 'operate',
       title: $t('common.operate'),
       align: 'center',
@@ -119,37 +100,22 @@ const {
           <NButton type="primary" ghost size="small" onClick={() => edit(row.id)}>
             {$t('common.edit')}
           </NButton>
-          <NPopconfirm onPositiveClick={() => handleDelete(row.id)}>
-            {{
-              default: () => $t('common.confirmDelete'),
-              trigger: () => (
-                <NButton type="error" ghost size="small">
-                  {$t('common.delete')}
-                </NButton>
-              )
-            }}
-          </NPopconfirm>
         </div>
       )
     }
   ]
 });
 
-const { handleAdd, handleEdit, checkedRowKeys, onBatchDeleted, onDeleted, drawerVisible, operateType, editingData } =
-  useTableOperate(data, getData);
+const { handleEdit, checkedRowKeys, onBatchDeleted, drawerVisible, operateType, editingData } = useTableOperate(
+  data,
+  getData
+);
 
 async function handleBatchDelete() {
   // request
   console.log(checkedRowKeys.value);
 
   onBatchDeleted();
-}
-
-async function handleDelete(id: number) {
-  const { error } = await fetchChannelDelete(id);
-  if (!error) {
-    await onDeleted();
-  }
 }
 
 function edit(id: number) {
@@ -159,19 +125,12 @@ function edit(id: number) {
 
 <template>
   <div class="min-h-500px flex-col-stretch gap-16px overflow-hidden lt-sm:overflow-auto">
-    <ChannelSearch v-model:model="searchParams" @reset="resetSearchParams" @search="getDataByPage" />
-    <NCard
-      :title="$t('page.manage.channel.title')"
-      :bordered="false"
-      size="small"
-      class="sm:flex-1-hidden card-wrapper"
-    >
+    <NCard :title="$t('page.manage.token.title')" :bordered="false" size="small" class="sm:flex-1-hidden card-wrapper">
       <template #header-extra>
         <TableHeaderOperation
           v-model:columns="columnChecks"
           :disabled-delete="checkedRowKeys.length === 0"
           :loading="loading"
-          @add="handleAdd"
           @delete="handleBatchDelete"
           @refresh="getData"
         />
@@ -189,7 +148,7 @@ function edit(id: number) {
         :pagination="mobilePagination"
         class="sm:h-full"
       />
-      <ChannelOperateDrawer
+      <TokenOperateDrawer
         v-model:visible="drawerVisible"
         :operate-type="operateType"
         :row-data="editingData"

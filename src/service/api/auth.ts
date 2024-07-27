@@ -80,3 +80,20 @@ export function fetchChannelDelete(id: number) {
     method: 'delete'
   });
 }
+
+// 如下为令牌模块
+export function fetchTokenList(params?: Api.SystemManage.TokenSearchParams) {
+  return request<Api.SystemManage.TokenList>({
+    url: '/system/token/list',
+    method: 'get',
+    params
+  });
+}
+
+export function fetchTokenEdit(params?: Api.SystemManage.TokenEditParams) {
+  return request({
+    url: '/system/token/edit',
+    method: 'post',
+    params
+  });
+}

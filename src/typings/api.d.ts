@@ -112,7 +112,7 @@ declare namespace Api {
       baseUrl: string;
       key: string;
       model: string;
-      order: string;
+      order: number;
       normal: ChannelNormal | null;
     }>;
 
@@ -126,5 +126,24 @@ declare namespace Api {
     >;
 
     type ChannelList = Common.PaginatingQueryRecord<Channel>;
+
+    type Token = Common.CommonRecord<{
+      id: number;
+      name: string;
+      key: string;
+      utilizedQuota: number;
+      remainingQuota: number;
+    }>;
+
+    type TokenSearchParams = CommonType.RecordNullable<
+      Pick<Api.SystemManage.Token, 'name' | 'status'> & CommonSearchParams
+    >;
+
+    type TokenEditParams = Pick<
+      Api.SystemManage.Token,
+      'id' | 'name' | 'key' | 'utilizedQuota' | 'remainingQuota' | 'status'
+    >;
+
+    type TokenList = Common.PaginatingQueryRecord<Token>;
   }
 }
