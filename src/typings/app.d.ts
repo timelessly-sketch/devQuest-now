@@ -465,6 +465,17 @@ declare namespace App {
               disable: string;
             };
           };
+          log: {
+            title: string;
+            createAt: string;
+            name: string;
+            model: string;
+            time: string;
+            input: string;
+            output: string;
+            total: string;
+            info: string;
+          };
           channel: {
             title: string;
             name: string;

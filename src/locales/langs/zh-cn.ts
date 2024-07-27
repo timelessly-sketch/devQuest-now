@@ -151,6 +151,7 @@ const local: App.I18n.Schema = {
     'iframe-page': '外链页面',
     home: '首页',
     manage: '系统管理',
+    log: '模型日志',
     manage_user: '用户管理',
     manage_channel: '渠道管理',
     manage_token: '令牌管理',
@@ -239,6 +240,17 @@ const local: App.I18n.Schema = {
           enable: '启用',
           disable: '禁用'
         }
+      },
+      log: {
+        title: '消费明细',
+        createAt: '时间',
+        name: '令牌',
+        model: '模型',
+        time: '耗时',
+        input: '提示',
+        output: '补全',
+        total: '花费',
+        info: '详情'
       },
       channel: {
         title: '渠道列表',

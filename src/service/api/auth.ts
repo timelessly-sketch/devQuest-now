@@ -97,3 +97,12 @@ export function fetchTokenEdit(params?: Api.SystemManage.TokenEditParams) {
     params
   });
 }
+
+// 如下为调用日志模块
+export function fetchLogList(params?: Api.SystemManage.LogSearchParams) {
+  return request<Api.SystemManage.LogList>({
+    url: 'system/log/list',
+    method: 'get',
+    params
+  });
+}

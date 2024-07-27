@@ -150,6 +150,7 @@ const local: App.I18n.Schema = {
     500: 'Server Error',
     'iframe-page': 'Iframe',
     home: 'Home',
+    log: 'model log',
     about: 'About',
     manage: 'Manage',
     manage_user: 'Manage User',
@@ -239,6 +240,17 @@ const local: App.I18n.Schema = {
           enable: 'Enable',
           disable: 'Disable'
         }
+      },
+      log: {
+        title: 'log title',
+        createAt: 'create at',
+        name: 'token',
+        model: 'model',
+        time: 'time',
+        input: 'input',
+        output: 'output',
+        total: 'total',
+        info: 'info'
       },
       channel: {
         title: 'title name',

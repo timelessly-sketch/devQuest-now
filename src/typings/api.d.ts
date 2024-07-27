@@ -145,5 +145,19 @@ declare namespace Api {
     >;
 
     type TokenList = Common.PaginatingQueryRecord<Token>;
+
+    type Log = Common.CommonRecord<{
+      name: string;
+      model: string;
+      time: string;
+      input: string;
+      output: string;
+      total: string;
+      info: string;
+    }>;
+
+    type LogSearchParams = CommonType.RecordNullable<Pick<Api.SystemManage.Log, 'createAt'> & CommonSearchParams>;
+
+    type LogList = Common.PaginatingQueryRecord<Log>;
   }
 }
