@@ -475,6 +475,7 @@ declare namespace App {
             output: string;
             total: string;
             info: string;
+            searchTime: string;
           };
           channel: {
             title: string;

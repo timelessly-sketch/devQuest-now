@@ -250,7 +250,8 @@ const local: App.I18n.Schema = {
         input: 'input',
         output: 'output',
         total: 'total',
-        info: 'info'
+        info: 'info',
+        searchTime: 'search Time'
       },
       channel: {
         title: 'title name',

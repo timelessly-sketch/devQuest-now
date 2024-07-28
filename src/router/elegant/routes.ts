@@ -82,7 +82,7 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'log',
       i18nKey: 'route.log',
       icon: 'line-md:cake',
-      order: 9,
+      order: 9
     }
   },
   {

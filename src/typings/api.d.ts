@@ -149,14 +149,16 @@ declare namespace Api {
     type Log = Common.CommonRecord<{
       name: string;
       model: string;
-      time: string;
       input: string;
       output: string;
+      time: string;
       total: string;
       info: string;
     }>;
 
-    type LogSearchParams = CommonType.RecordNullable<Pick<Api.SystemManage.Log, 'createAt'> & CommonSearchParams>;
+    type LogSearchParams = CommonType.RecordNullable<
+      Pick<Api.SystemManage.Log, 'model'> & CommonSearchParams & { timeRange: string }
+    >;
 
     type LogList = Common.PaginatingQueryRecord<Log>;
   }

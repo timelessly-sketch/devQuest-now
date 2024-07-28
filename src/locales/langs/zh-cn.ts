@@ -250,7 +250,8 @@ const local: App.I18n.Schema = {
         input: '提示',
         output: '补全',
         total: '花费',
-        info: '详情'
+        info: '详情',
+        searchTime: '创建时间'
       },
       channel: {
         title: '渠道列表',

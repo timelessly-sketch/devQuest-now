@@ -1,11 +1,15 @@
 <script setup lang="tsx">
+import { ref } from 'vue';
 import { $t } from '@/locales';
 import { useAppStore } from '@/store/modules/app';
 import { useTable, useTableOperate } from '@/hooks/common/table';
 import { fetchLogList } from '@/service/api';
 import LogHeaderOperation from '@/views/log/advanced/log-header-operation.vue';
+import LogSearch from '@/views/log/advanced/log-search.vue';
 
 const appStore = useAppStore();
+
+const timeRange = ref<[number, number]>([Date.now() - 24 * 60 * 60 * 1000, Date.now()]);
 
 const {
   columns,
@@ -13,16 +17,17 @@ const {
   data,
   getData,
   loading,
-  mobilePagination
-  // searchParams,
-  // resetSearchParams
+  mobilePagination,
+  searchParams,
+  getDataByPage,
+  resetSearchParams
 } = useTable({
   apiFn: fetchLogList,
   showTotal: true,
   apiParams: {
     current: 1,
     size: 20,
-    createAt: ''
+    timeRange: timeRange.value.join(',')
   },
   columns: () => [
     {
@@ -90,6 +95,7 @@ const { checkedRowKeys } = useTableOperate(data, getData);
 
 <template>
   <div class="min-h-500px flex-col-stretch gap-16px overflow-hidden lt-sm:overflow-auto">
+    <LogSearch v-model:model="searchParams" @reset="resetSearchParams" @search="getDataByPage" />
     <NCard :title="$t('page.manage.log.title')" :bordered="false" size="small" class="sm:flex-1-hidden card-wrapper">
       <template #header-extra>
         <LogHeaderOperation
