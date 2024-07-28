@@ -84,7 +84,6 @@ watch(visible, () => {
   if (visible.value) {
     handleInitModel();
     restoreValidation();
-    // getRoleOptions();
   }
 });
 </script>

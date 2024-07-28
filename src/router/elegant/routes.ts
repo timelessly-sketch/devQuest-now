@@ -47,7 +47,7 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'about',
       i18nKey: 'route.about',
       icon: 'fluent:book-information-24-regular',
-      order: 10
+      order: 100
     }
   },
   {
@@ -82,7 +82,7 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'log',
       i18nKey: 'route.log',
       icon: 'line-md:cake',
-      order: 9
+      order: 7
     }
   },
   {
@@ -140,6 +140,30 @@ export const generatedRoutes: GeneratedRoute[] = [
           i18nKey: 'route.manage_user',
           icon: 'ic:round-manage-accounts',
           order: 2
+        }
+      }
+    ]
+  },
+  {
+    name: 'setting',
+    path: '/setting',
+    component: 'layout.base',
+    meta: {
+      title: 'setting',
+      i18nKey: 'route.setting',
+      icon: 'grommet-icons:apps-rounded',
+      roles: ['Q_SUPER'],
+      order: 10
+    },
+    children: [
+      {
+        name: 'setting_other',
+        path: '/setting/other',
+        component: 'view.setting_other',
+        meta: {
+          title: 'setting_other',
+          i18nKey: 'route.setting_other',
+          icon: 'grommet-icons:gremlin'
         }
       }
     ]

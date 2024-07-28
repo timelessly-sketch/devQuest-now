@@ -155,6 +155,8 @@ const local: App.I18n.Schema = {
     manage_user: '用户管理',
     manage_channel: '渠道管理',
     manage_token: '令牌管理',
+    setting: '系统设置',
+    setting_other: '其他设置',
     about: '关于'
   },
   page: {
@@ -329,6 +331,24 @@ const local: App.I18n.Schema = {
           male: '男',
           female: '女',
           secrecy: '保密'
+        }
+      }
+    },
+    setting: {
+      other: {
+        email: {
+          title: 'SMTP设置',
+          info: '用以支持系统的邮件发送, 注册、登录等',
+          host: 'SMTP地址',
+          port: '端口',
+          name: '邮箱',
+          password: '授权码',
+          form: {
+            host: '请输入SMTP服务器地址',
+            port: '请输入SMTP服务器端口',
+            name: '请输入SMTP默认账户',
+            password: '请输入SMTP授权码'
+          }
         }
       }
     },

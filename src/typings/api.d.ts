@@ -161,5 +161,12 @@ declare namespace Api {
     >;
 
     type LogList = Common.PaginatingQueryRecord<Log>;
+
+    type Setting = Common.CommonRecord<{
+      name: string;
+      configuration: any;
+    }>;
+
+    type EditSettingParams = CommonType.RecordNullable<Api.SystemManage.Setting>;
   }
 }

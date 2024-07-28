@@ -106,3 +106,19 @@ export function fetchLogList(params?: Api.SystemManage.LogSearchParams) {
     params
   });
 }
+
+// 如下为邮箱模块
+export function fetchSettingEdit(params?: Api.SystemManage.EditSettingParams) {
+  return request({
+    url: 'system/config/edit',
+    method: 'post',
+    params
+  });
+}
+
+export function fetchSetting(name: string) {
+  return request<Api.SystemManage.Setting>({
+    url: `system/config/${name}`,
+    method: 'get'
+  });
+}

@@ -155,7 +155,9 @@ const local: App.I18n.Schema = {
     manage: 'Manage',
     manage_user: 'Manage User',
     manage_channel: 'Manage Channel',
-    manage_token: 'Manage Token'
+    manage_token: 'Manage Token',
+    setting: 'setting',
+    setting_other: 'setting other'
   },
   page: {
     login: {
@@ -329,6 +331,24 @@ const local: App.I18n.Schema = {
           male: 'Male',
           female: 'Female',
           secrecy: 'Secrecy'
+        }
+      }
+    },
+    setting: {
+      other: {
+        email: {
+          title: 'email setting',
+          info: 'info',
+          host: 'host',
+          port: 'port',
+          name: 'email name',
+          password: 'email passwd',
+          form: {
+            host: 'smtp host',
+            port: 'smtp port',
+            name: 'smtp name',
+            password: 'smtp password'
+          }
         }
       }
     },

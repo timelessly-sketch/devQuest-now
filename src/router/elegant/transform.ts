@@ -172,7 +172,9 @@ const routeMap: RouteMap = {
   "manage": "/manage",
   "manage_channel": "/manage/channel",
   "manage_token": "/manage/token",
-  "manage_user": "/manage/user"
+  "manage_user": "/manage/user",
+  "setting": "/setting",
+  "setting_other": "/setting/other"
 };
 
 /**

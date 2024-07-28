@@ -29,6 +29,8 @@ declare module "@elegant-router/types" {
     "manage_channel": "/manage/channel";
     "manage_token": "/manage/token";
     "manage_user": "/manage/user";
+    "setting": "/setting";
+    "setting_other": "/setting/other";
   };
 
   /**
@@ -69,6 +71,7 @@ declare module "@elegant-router/types" {
     | "log"
     | "login"
     | "manage"
+    | "setting"
   >;
 
   /**
@@ -96,6 +99,7 @@ declare module "@elegant-router/types" {
     | "manage_channel"
     | "manage_token"
     | "manage_user"
+    | "setting_other"
   >;
 
   /**

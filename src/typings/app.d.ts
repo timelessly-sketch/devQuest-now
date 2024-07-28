@@ -556,6 +556,24 @@ declare namespace App {
             };
           };
         };
+        setting: {
+          other: {
+            email: {
+              title: string;
+              info: string;
+              host: string;
+              port: string;
+              name: string;
+              password: string;
+              form: {
+                host: string;
+                port: string;
+                name: string;
+                password: string;
+              };
+            };
+          };
+        };
         about: {
           title: string;
           introduction: string;
