@@ -343,11 +343,22 @@ const local: App.I18n.Schema = {
           port: '端口',
           name: '邮箱',
           password: '授权码',
+          button: '发送测试邮件',
           form: {
             host: '请输入SMTP服务器地址',
             port: '请输入SMTP服务器端口',
             name: '请输入SMTP默认账户',
             password: '请输入SMTP授权码'
+          }
+        },
+        feishu: {
+          title: '飞书设置',
+          appid: 'ID标识',
+          secret: '密钥',
+          info: '用以支持通过飞书进行消息通知, 渠道异常、恢复等消息',
+          form: {
+            appid: '请输入飞书应用标识',
+            secret: '请输入飞书密钥'
           }
         }
       }

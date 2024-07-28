@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { onMounted, reactive } from 'vue';
+import { onMounted, reactive, ref } from 'vue';
 import { $t } from '@/locales';
-import { fetchSetting, fetchSettingEdit } from '@/service/api';
+import { fetchMemberSendMsg, fetchSetting, fetchSettingEdit } from '@/service/api';
 
 defineOptions({
   name: 'EmailData'
@@ -10,24 +10,35 @@ defineOptions({
 interface email {
   host: string;
   port: string;
+  enableSsl: string;
   username: string;
   password: string;
 }
 
+const isLoading = ref(false);
 const model: email = reactive(createDefaultModel());
 function createDefaultModel(): email {
   return {
     host: 'smtp.qq.com',
     port: '587',
+    enableSsl: '',
     username: 'test@qq.com',
     password: '1234578'
   };
 }
 
 async function handleSubmit() {
+  isLoading.value = true;
   const { error } = await fetchSettingEdit({ name: 'email', configuration: model });
   if (!error) {
     window.$message?.success($t('common.updateSuccess'));
+  }
+  isLoading.value = false;
+}
+async function handleTest() {
+  const { error } = await fetchMemberSendMsg({ email: model.username });
+  if (!error) {
+    window.$message?.success?.($t('page.login.codeLogin.sendCodeSuccess'));
   }
 }
 
@@ -64,7 +75,8 @@ onMounted(async () => {
       </NGrid>
     </NForm>
     <NSpace class="w-full pr-20px" justify="end">
-      <NButton type="primary" @click="handleSubmit">{{ $t('common.confirm') }}</NButton>
+      <NButton type="warning" @click="handleTest">{{ $t('page.setting.other.email.button') }}</NButton>
+      <NButton type="primary" :loading="isLoading" @click="handleSubmit">{{ $t('common.confirm') }}</NButton>
     </NSpace>
   </NCard>
 </template>

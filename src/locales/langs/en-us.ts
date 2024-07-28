@@ -343,11 +343,22 @@ const local: App.I18n.Schema = {
           port: 'port',
           name: 'email name',
           password: 'email passwd',
+          button: 'test email',
           form: {
             host: 'smtp host',
             port: 'smtp port',
             name: 'smtp name',
             password: 'smtp password'
+          }
+        },
+        feishu: {
+          title: 'feishu title',
+          info: 'info',
+          appid: 'appid',
+          secret: 'secret',
+          form: {
+            appid: 'appid',
+            secret: 'secret'
           }
         }
       }

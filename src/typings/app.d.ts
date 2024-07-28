@@ -565,11 +565,22 @@ declare namespace App {
               port: string;
               name: string;
               password: string;
+              button: string;
               form: {
                 host: string;
                 port: string;
                 name: string;
                 password: string;
+              };
+            };
+            feishu: {
+              title: string;
+              info: string;
+              appid: string;
+              secret: string;
+              form: {
+                appid: string;
+                secret: string;
               };
             };
           };

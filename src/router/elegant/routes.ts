@@ -163,7 +163,7 @@ export const generatedRoutes: GeneratedRoute[] = [
         meta: {
           title: 'setting_other',
           i18nKey: 'route.setting_other',
-          icon: 'grommet-icons:gremlin'
+          icon: 'ic:round-construction'
         }
       }
     ]
