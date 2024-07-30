@@ -49,7 +49,7 @@ const {
       key: 'baseUrl',
       title: $t('page.manage.channel.baseUrl'),
       align: 'center',
-      width: 180
+      width: 200
     },
     {
       key: 'key',

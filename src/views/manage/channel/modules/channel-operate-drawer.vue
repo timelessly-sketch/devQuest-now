@@ -105,7 +105,7 @@ watch(visible, () => {
           <NInput v-model:value="model.model" :placeholder="$t('page.manage.channel.form.model')" />
         </NFormItem>
         <NFormItem :label="$t('page.manage.channel.order')" path="order">
-          <NInputNumber v-model:value="model.order"></NInputNumber>
+          <NInputNumber v-model:value="model.order" :min="1" :max="100"></NInputNumber>
         </NFormItem>
         <NFormItem :label="$t('page.manage.channel.channelStatus')" path="channelStatus">
           <NRadioGroup v-model:value="model.status">

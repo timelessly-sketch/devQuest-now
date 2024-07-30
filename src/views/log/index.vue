@@ -52,7 +52,7 @@ const {
       key: 'model',
       title: $t('page.manage.log.model'),
       align: 'center',
-      width: 80
+      width: 120
     },
     {
       key: 'time',
@@ -64,13 +64,13 @@ const {
       key: 'input',
       title: $t('page.manage.log.input'),
       align: 'center',
-      width: 80
+      width: 60
     },
     {
       key: 'output',
       title: $t('page.manage.log.output'),
       align: 'center',
-      width: 80
+      width: 60
     },
     {
       key: 'total',

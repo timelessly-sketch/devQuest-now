@@ -56,13 +56,13 @@ const {
       key: 'utilizedQuota',
       title: $t('page.manage.token.utilizedQuota'),
       align: 'center',
-      width: 80
+      width: 100
     },
     {
       key: 'remainingQuota',
       title: $t('page.manage.token.remainingQuota'),
       align: 'center',
-      width: 80
+      width: 100
     },
     {
       key: 'updateAt',
