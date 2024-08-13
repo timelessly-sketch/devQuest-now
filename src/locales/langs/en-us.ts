@@ -157,6 +157,7 @@ const local: App.I18n.Schema = {
     manage_channel: 'Manage Channel',
     manage_token: 'Manage Token',
     setting: 'setting',
+    tariffs: 'tariffs',
     setting_other: 'setting other'
   },
   page: {
@@ -237,6 +238,10 @@ const local: App.I18n.Schema = {
         desc5: 'Soybean just wrote some of the workbench pages casually, and it was enough to see!'
       },
       creativity: 'Creativity'
+    },
+    tariffs: {
+      title: 'model tariffs',
+      chatInfo: 'chatInfo'
     },
     manage: {
       common: {

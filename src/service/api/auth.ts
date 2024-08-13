@@ -122,3 +122,11 @@ export function fetchSetting(name: string) {
     method: 'get'
   });
 }
+
+// 如下为资费模块
+export function fetchTariffsList() {
+  return request<Api.SystemManage.ModelList>({
+    url: '/system/tariffs/list',
+    method: 'get'
+  });
+}

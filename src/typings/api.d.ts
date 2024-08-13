@@ -172,5 +172,16 @@ declare namespace Api {
     }>;
 
     type EditSettingParams = CommonType.RecordNullable<Api.SystemManage.Setting>;
+
+    type model = Common.CommonRecord<{
+      id: string;
+      name: string;
+      modelRatio: string;
+      completionRatio: string;
+      groupRatio: string;
+      modelType: string;
+      info: string;
+    }>;
+    type ModelList = Common.PaginatingQueryRecord<model>;
   }
 }

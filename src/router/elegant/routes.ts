@@ -164,8 +164,20 @@ export const generatedRoutes: GeneratedRoute[] = [
           title: 'setting_other',
           i18nKey: 'route.setting_other',
           icon: 'ic:round-construction'
-        }
+        },
+        order: 7,
       }
     ]
+  },
+  {
+    name: 'tariffs',
+    path: '/tariffs',
+    component: 'layout.base$view.tariffs',
+    meta: {
+      title: 'tariffs',
+      i18nKey: 'route.tariffs',
+      icon: 'line-md:bell-twotone-loop',
+      order: 8,
+    }
   }
 ];

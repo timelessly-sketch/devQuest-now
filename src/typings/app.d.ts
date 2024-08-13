@@ -460,6 +460,10 @@ declare namespace App {
           };
           creativity: string;
         };
+        tariffs: {
+          title: string;
+          chatInfo: string;
+        };
         manage: {
           common: {
             status: {

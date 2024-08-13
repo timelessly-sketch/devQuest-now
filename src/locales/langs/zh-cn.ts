@@ -157,6 +157,7 @@ const local: App.I18n.Schema = {
     manage_token: '令牌管理',
     setting: '系统设置',
     setting_other: '其他设置',
+    tariffs: '资费介绍',
     about: '关于'
   },
   page: {
@@ -237,6 +238,10 @@ const local: App.I18n.Schema = {
         desc5: 'Soybean 刚才把工作台页面随便写了一些，凑合能看了！'
       },
       creativity: '创意'
+    },
+    tariffs: {
+      title: '模型价格',
+      chatInfo: '按量计费费用 = 分组倍率 × 模型倍率 × （提示token数 + 补全token数 × 补全倍率）/ 500000 （单位：美元）'
     },
     manage: {
       common: {
