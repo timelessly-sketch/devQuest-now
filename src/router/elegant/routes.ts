@@ -165,7 +165,7 @@ export const generatedRoutes: GeneratedRoute[] = [
           i18nKey: 'route.setting_other',
           icon: 'ic:round-construction'
         },
-        order: 7,
+        order: 7
       }
     ]
   },
@@ -177,7 +177,7 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'tariffs',
       i18nKey: 'route.tariffs',
       icon: 'line-md:bell-twotone-loop',
-      order: 8,
+      order: 8
     }
   }
 ];
