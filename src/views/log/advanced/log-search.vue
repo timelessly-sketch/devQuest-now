@@ -12,7 +12,7 @@ interface Emits {
   (e: 'search'): void;
 }
 
-const timeRange = ref<[number, number]>([Date.now() - 24 * 60 * 60 * 1000, Date.now()]);
+const timeRange = ref<[number, number]>([Date.now() - 24 * 60 * 60 * 1000, Date.now() + 2 * 60 * 60 * 1000]);
 
 const emit = defineEmits<Emits>();
 
@@ -23,7 +23,7 @@ const { formRef, validate, restoreValidation } = useNaiveForm();
 async function reset() {
   await restoreValidation();
   model.value.model = null;
-  timeRange.value = [Date.now() - 24 * 60 * 60 * 1000, Date.now()];
+  timeRange.value = [Date.now() - 24 * 60 * 60 * 1000, Date.now() + 2 * 60 * 60 * 1000];
   emit('reset');
 }
 

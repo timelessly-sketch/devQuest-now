@@ -434,10 +434,11 @@ declare namespace App {
           branchDesc: string;
           greeting: string;
           weatherDesc: string;
+          tokenApi: string;
+          tokenKey: string;
           projectCount: string;
           todo: string;
           message: string;
-          downloadCount: string;
           registerCount: string;
           schedule: string;
           study: string;
@@ -445,7 +446,8 @@ declare namespace App {
           rest: string;
           entertainment: string;
           visitCount: string;
-          turnover: string;
+          remainingQuota: string;
+          utilizedQuota: string;
           dealCount: string;
           projectNews: {
             title: string;

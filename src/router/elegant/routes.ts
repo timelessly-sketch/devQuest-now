@@ -46,7 +46,7 @@ export const generatedRoutes: GeneratedRoute[] = [
     meta: {
       title: 'about',
       i18nKey: 'route.about',
-      icon: 'fluent:book-information-24-regular',
+      icon: 'iconoir:accessibility-sign',
       order: 100
     }
   },

@@ -2,11 +2,12 @@
 import { computed } from 'vue';
 import { createReusableTemplate } from '@vueuse/core';
 import { $t } from '@/locales';
+import { useAuthStore } from '@/store/modules/auth';
 
 defineOptions({
   name: 'CardData'
 });
-
+const authStore = useAuthStore();
 interface CardData {
   key: string;
   title: string;
@@ -23,7 +24,7 @@ const cardData = computed<CardData[]>(() => [
   {
     key: 'visitCount',
     title: $t('page.home.visitCount'),
-    value: 9725,
+    value: authStore.userInfo.calls,
     unit: '',
     color: {
       start: '#ec4786',
@@ -32,26 +33,26 @@ const cardData = computed<CardData[]>(() => [
     icon: 'ant-design:bar-chart-outlined'
   },
   {
-    key: 'turnover',
-    title: $t('page.home.turnover'),
-    value: 1026,
+    key: 'utilizedQuota',
+    title: $t('page.home.utilizedQuota'),
+    value: authStore.userInfo.utilizedQuota,
     unit: '$',
     color: {
       start: '#865ec0',
       end: '#5144b4'
     },
-    icon: 'ant-design:money-collect-outlined'
+    icon: 'carbon:document-download'
   },
   {
-    key: 'downloadCount',
-    title: $t('page.home.downloadCount'),
-    value: 970925,
-    unit: '',
+    key: 'remainingQuota',
+    title: $t('page.home.remainingQuota'),
+    value: authStore.userInfo.remainingQuota,
+    unit: '$',
     color: {
       start: '#56cdf3',
       end: '#719de3'
     },
-    icon: 'carbon:document-download'
+    icon: 'ant-design:money-collect-outlined'
   },
   {
     key: 'dealCount',

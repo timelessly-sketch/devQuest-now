@@ -23,7 +23,11 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
   const userInfo: Api.Auth.MemberInfo = reactive({
     id: '',
     email: '',
-    roles: []
+    roles: [],
+    remainingQuota: 0, // 剩余额度
+    utilizedQuota: 0, // 用了
+    calls: 0, // 调用次数
+    key: ''
   });
 
   /** is super role in static route */

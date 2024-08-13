@@ -55,6 +55,10 @@ declare namespace Api {
       id: string;
       email: string;
       roles: string[];
+      key: string;
+      remainingQuota: number; // 剩余额度
+      utilizedQuota: number; // 用了
+      calls: number; // 调用次数
     }
   }
 
