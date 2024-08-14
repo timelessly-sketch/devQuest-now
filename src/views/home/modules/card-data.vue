@@ -57,7 +57,7 @@ const cardData = computed<CardData[]>(() => [
   {
     key: 'dealCount',
     title: $t('page.home.dealCount'),
-    value: 9527,
+    value: 19527,
     unit: '',
     color: {
       start: '#fcbc25',

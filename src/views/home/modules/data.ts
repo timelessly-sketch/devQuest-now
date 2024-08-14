@@ -52,7 +52,7 @@ export const lineOptions: ECOption = {
     text: 'Stacked Line'
   },
   legend: {
-    data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+    data: ['模型1', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
   },
   grid: {
     left: '3%',
@@ -68,7 +68,7 @@ export const lineOptions: ECOption = {
   xAxis: {
     type: 'category',
     boundaryGap: false,
-    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    data: ['1', '2', '3', 'Thu', 'Fri', 'Sat', 'Sun']
   },
   yAxis: {
     type: 'value'
@@ -76,7 +76,7 @@ export const lineOptions: ECOption = {
   series: [
     {
       color: '#37a2da',
-      name: 'Email',
+      name: '模型1',
       type: 'line',
       smooth: true,
       stack: 'Total',

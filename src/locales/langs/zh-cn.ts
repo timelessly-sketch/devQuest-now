@@ -230,7 +230,7 @@ const local: App.I18n.Schema = {
       visitCount: '请求次数',
       remainingQuota: '剩余额度',
       utilizedQuota: '已使用额度',
-      dealCount: '成交量',
+      dealCount: '日使用量',
       projectNews: {
         title: '项目动态',
         moreNews: '更多动态',
