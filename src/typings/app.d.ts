@@ -436,6 +436,7 @@ declare namespace App {
           weatherDesc: string;
           tokenApi: string;
           tokenKey: string;
+          indefiniteReference: string;
           projectCount: string;
           todo: string;
           message: string;

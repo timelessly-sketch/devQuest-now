@@ -159,6 +159,8 @@ const local: App.I18n.Schema = {
     setting: 'setting',
     tariffs: 'tariffs',
     setting_other: 'setting other'
+    // document: 'help document',
+    // document_api: 'document_api'
   },
   page: {
     login: {
@@ -220,6 +222,7 @@ const local: App.I18n.Schema = {
       message: 'Message',
       registerCount: 'Register Count',
       schedule: 'Work and rest Schedule',
+      indefiniteReference: 'token: sk-xxx',
       study: 'Study',
       work: 'Work',
       rest: 'Rest',

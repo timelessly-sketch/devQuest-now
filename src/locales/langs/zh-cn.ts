@@ -159,6 +159,8 @@ const local: App.I18n.Schema = {
     setting_other: '其他设置',
     tariffs: '资费介绍',
     about: '关于'
+    // document: '帮助文档',
+    // document_api: '接口文档'
   },
   page: {
     login: {
@@ -216,6 +218,7 @@ const local: App.I18n.Schema = {
       tokenApi: 'API地址: {url}',
       tokenKey: '令牌: {key}',
       projectCount: '项目数',
+      indefiniteReference: '令牌: sk-xxxxxxxkvj6KCQ58m7vLXTqB6aTnwUbwFCAjQolmqCRRr',
       todo: '待办',
       message: '消息',
       registerCount: '注册量',
