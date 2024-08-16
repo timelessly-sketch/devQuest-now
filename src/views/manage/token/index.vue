@@ -50,7 +50,7 @@ const {
       key: 'key',
       title: $t('page.manage.token.key'),
       align: 'center',
-      minWidth: 400
+      minWidth: 420
     },
     {
       key: 'utilizedQuota',
@@ -68,7 +68,7 @@ const {
       key: 'updateAt',
       title: $t('page.manage.token.updateAt'),
       align: 'center',
-      width: 200
+      width: 180
     },
     {
       key: 'status',

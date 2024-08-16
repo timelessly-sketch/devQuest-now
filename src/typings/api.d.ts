@@ -183,5 +183,21 @@ declare namespace Api {
       info: string;
     }>;
     type ModelList = Common.PaginatingQueryRecord<model>;
+
+    type Redemption = {
+      edit: boolean;
+      name: string;
+      number: number;
+      quota: number;
+    };
+
+    type RedemptionResp = Common.CommonRecord<{
+      key: string;
+      quota: number;
+      name: string;
+      mail: string;
+    }>;
+
+    type RedemptionList = Common.PaginatingQueryRecord<RedemptionResp>;
   }
 }

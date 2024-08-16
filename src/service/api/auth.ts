@@ -130,3 +130,12 @@ export function fetchTariffsList() {
     method: 'get'
   });
 }
+
+// 如下为兑换码模块
+export function fetchRedemption(params?: Api.SystemManage.Redemption) {
+  return request<Api.SystemManage.RedemptionList>({
+    url: '/system/redemption',
+    method: 'post',
+    params
+  });
+}
