@@ -465,6 +465,18 @@ declare namespace App {
           title: string;
           chatInfo: string;
         };
+        toup: {
+          title: string;
+          code: {
+            title: string;
+            desc: string;
+            info: string;
+          };
+          recharge: {
+            title: string;
+            desc: string;
+          };
+        };
         manage: {
           common: {
             status: {

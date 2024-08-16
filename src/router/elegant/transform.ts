@@ -175,7 +175,8 @@ const routeMap: RouteMap = {
   "manage_user": "/manage/user",
   "setting": "/setting",
   "setting_other": "/setting/other",
-  "tariffs": "/tariffs"
+  "tariffs": "/tariffs",
+  "topup": "/topup"
 };
 
 /**

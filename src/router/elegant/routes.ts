@@ -179,5 +179,16 @@ export const generatedRoutes: GeneratedRoute[] = [
       icon: 'line-md:bell-twotone-loop',
       order: 8
     }
+  },
+  {
+    name: 'topup',
+    path: '/topup',
+    component: 'layout.base$view.topup',
+    meta: {
+      title: 'topup',
+      i18nKey: 'route.topup',
+      order: 6,
+      icon: 'line-md:medical-services-twotone'
+    }
   }
 ];

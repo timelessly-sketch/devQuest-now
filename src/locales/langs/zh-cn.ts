@@ -158,7 +158,8 @@ const local: App.I18n.Schema = {
     setting: '系统设置',
     setting_other: '其他设置',
     tariffs: '资费介绍',
-    about: '关于'
+    about: '关于',
+    topup: '钱包资产'
     // document: '帮助文档',
     // document_api: '接口文档'
   },
@@ -246,6 +247,18 @@ const local: App.I18n.Schema = {
       title: '模型价格',
       chatInfo: '按量计费费用 = 分组倍率 × 模型倍率 × （提示token数 + 补全token数 × 补全倍率）/ 500000 （单位：美元）'
     },
+    toup: {
+      title: '我的钱包',
+      code: {
+        title: '兑换码',
+        desc: '请填写兑换码',
+        info: '还没有兑换码？ 客服购买更优惠哦^'
+      },
+      recharge: {
+        title: '在线充值',
+        desc: '微信充值'
+      }
+    },
     manage: {
       common: {
         status: {
@@ -254,7 +267,7 @@ const local: App.I18n.Schema = {
         }
       },
       log: {
-        title: '消费明细',
+        title: '消费详情',
         createAt: '时间',
         name: '令牌',
         model: '模型',

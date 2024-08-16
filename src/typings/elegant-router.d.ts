@@ -32,6 +32,7 @@ declare module "@elegant-router/types" {
     "setting": "/setting";
     "setting_other": "/setting/other";
     "tariffs": "/tariffs";
+    "topup": "/topup";
   };
 
   /**
@@ -74,6 +75,7 @@ declare module "@elegant-router/types" {
     | "manage"
     | "setting"
     | "tariffs"
+    | "topup"
   >;
 
   /**
@@ -103,6 +105,7 @@ declare module "@elegant-router/types" {
     | "manage_user"
     | "setting_other"
     | "tariffs"
+    | "topup"
   >;
 
   /**

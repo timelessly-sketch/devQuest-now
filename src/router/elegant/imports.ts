@@ -28,4 +28,5 @@ export const views: Record<LastLevelRouteKey, RouteComponent | (() => Promise<Ro
   manage_user: () => import("@/views/manage/user/index.vue"),
   setting_other: () => import("@/views/setting/other/index.vue"),
   tariffs: () => import("@/views/tariffs/index.vue"),
+  topup: () => import("@/views/topup/index.vue"),
 };

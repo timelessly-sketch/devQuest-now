@@ -158,7 +158,8 @@ const local: App.I18n.Schema = {
     manage_token: 'Manage Token',
     setting: 'setting',
     tariffs: 'tariffs',
-    setting_other: 'setting other'
+    setting_other: 'setting other',
+    topup: 'topup'
     // document: 'help document',
     // document_api: 'document_api'
   },
@@ -245,6 +246,18 @@ const local: App.I18n.Schema = {
     tariffs: {
       title: 'model tariffs',
       chatInfo: 'chatInfo'
+    },
+    toup: {
+      title: 'toup',
+      code: {
+        title: 'code',
+        desc: 'code',
+        info: 'info'
+      },
+      recharge: {
+        title: 'online recharge',
+        desc: 'online recharge'
+      }
     },
     manage: {
       common: {

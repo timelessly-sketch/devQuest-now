@@ -33,12 +33,8 @@ const gap = computed(() => (appStore.isMobile ? 0 : 16));
             <NTag type="info">
               {{ $t('page.home.tokenApi', { url: baseURL }) }}
             </NTag>
-            <!-- 条件判断，如果用户邮箱是test@qq.com，则显示无权限查看 -->
-            <NTag v-if="authStore.userInfo.email === 'test@qq.com'" type="info">
-              {{ $t('page.home.indefiniteReference') }}
-            </NTag>
             <!-- 如果用户邮箱不是test@qq.com，则显示"您无限期参考" -->
-            <NTag v-else type="info">
+            <NTag type="info">
               {{ $t('page.home.tokenKey', { key: authStore.userInfo.key }) }}
             </NTag>
           </div>

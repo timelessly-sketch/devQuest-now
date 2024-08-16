@@ -1,5 +1,6 @@
 <script setup lang="tsx">
-import { ref } from 'vue';
+import { h, ref } from 'vue';
+import { NTag } from 'naive-ui';
 import { $t } from '@/locales';
 import { useAppStore } from '@/store/modules/app';
 import { useTable, useTableOperate } from '@/hooks/common/table';
@@ -46,13 +47,15 @@ const {
       key: 'name',
       title: $t('page.manage.log.name'),
       align: 'center',
-      width: 160
+      width: 160,
+      render: row => h(NTag, { type: 'success', bordered: false }, () => row.name)
     },
     {
       key: 'model',
       title: $t('page.manage.log.model'),
       align: 'center',
-      width: 120
+      width: 120,
+      render: row => h(NTag, { type: 'info', bordered: false }, () => row.model)
     },
     {
       key: 'time',
