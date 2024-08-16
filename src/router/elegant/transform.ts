@@ -174,6 +174,7 @@ const routeMap: RouteMap = {
   "manage_token": "/manage/token",
   "manage_user": "/manage/user",
   "setting": "/setting",
+  "setting_code": "/setting/code",
   "setting_other": "/setting/other",
   "tariffs": "/tariffs",
   "topup": "/topup"

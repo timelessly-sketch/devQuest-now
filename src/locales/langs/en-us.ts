@@ -159,6 +159,7 @@ const local: App.I18n.Schema = {
     setting: 'setting',
     tariffs: 'tariffs',
     setting_other: 'setting other',
+    setting_code: 'setting_code',
     topup: 'topup'
     // document: 'help document',
     // document_api: 'document_api'
@@ -383,6 +384,16 @@ const local: App.I18n.Schema = {
             appid: 'appid',
             secret: 'secret'
           }
+        }
+      },
+      code: {
+        title: 'title',
+        button: 'button',
+        add: {
+          title: 'add title',
+          name: 'name',
+          quota: 'quota',
+          number: 'number'
         }
       }
     },

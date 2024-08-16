@@ -30,6 +30,7 @@ declare module "@elegant-router/types" {
     "manage_token": "/manage/token";
     "manage_user": "/manage/user";
     "setting": "/setting";
+    "setting_code": "/setting/code";
     "setting_other": "/setting/other";
     "tariffs": "/tariffs";
     "topup": "/topup";
@@ -103,6 +104,7 @@ declare module "@elegant-router/types" {
     | "manage_channel"
     | "manage_token"
     | "manage_user"
+    | "setting_code"
     | "setting_other"
     | "tariffs"
     | "topup"

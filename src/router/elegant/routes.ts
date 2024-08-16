@@ -157,6 +157,17 @@ export const generatedRoutes: GeneratedRoute[] = [
     },
     children: [
       {
+        name: 'setting_code',
+        path: '/setting/code',
+        component: 'view.setting_code',
+        meta: {
+          title: 'setting_code',
+          i18nKey: 'route.setting_code',
+          icon: 'line-md:compass',
+          order: 2
+        }
+      },
+      {
         name: 'setting_other',
         path: '/setting/other',
         component: 'view.setting_other',

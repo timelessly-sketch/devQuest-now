@@ -14,7 +14,7 @@ const recharge = ref(5);
       <NDivider title-placement="left">{{ $t('page.toup.code.title') }}</NDivider>
       <NInputGroup class="max-w-600px">
         <NInput type="text" :placeholder="$t('page.toup.code.desc')" />
-        <NButton type="primary">{{ $t('page.login.common.confirm') }}</NButton>
+        <NButton type="primary">{{ $t('common.confirm') }}</NButton>
       </NInputGroup>
       <p class="text-#999 leading-30px">{{ $t('page.toup.code.info') }}</p>
       <NDivider title-placement="left">{{ $t('page.toup.recharge.title') }}</NDivider>

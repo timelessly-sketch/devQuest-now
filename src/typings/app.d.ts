@@ -603,6 +603,16 @@ declare namespace App {
               };
             };
           };
+          code: {
+            title: string;
+            button: string;
+            add: {
+              title: string;
+              name: string;
+              quota: string;
+              number: string;
+            };
+          };
         };
         about: {
           title: string;

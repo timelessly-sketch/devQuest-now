@@ -157,6 +157,7 @@ const local: App.I18n.Schema = {
     manage_token: '令牌管理',
     setting: '系统设置',
     setting_other: '其他设置',
+    setting_code: '兑换小码',
     tariffs: '资费介绍',
     about: '关于',
     topup: '钱包资产'
@@ -383,6 +384,16 @@ const local: App.I18n.Schema = {
             appid: '请输入飞书应用标识',
             secret: '请输入飞书密钥'
           }
+        }
+      },
+      code: {
+        title: '兑换码',
+        button: '添加兑换码',
+        add: {
+          title: '添加兑换码',
+          name: '名称',
+          quota: '额度',
+          number: '数量'
         }
       }
     },
