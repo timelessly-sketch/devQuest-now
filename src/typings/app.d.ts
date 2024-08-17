@@ -605,6 +605,18 @@ declare namespace App {
                 secret: string;
               };
             };
+            hupay: {
+              title: string;
+              info: string;
+              appid: string;
+              secret: string;
+              host: string;
+              form: {
+                appid: string;
+                secret: string;
+                host: string;
+              };
+            };
           };
           code: {
             title: string;

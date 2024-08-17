@@ -82,7 +82,6 @@ onMounted(async () => {
         <NButton type="primary" :loading="isLoading" @click="handleSubmit">{{ $t('common.confirm') }}</NButton>
       </NSpace>
     </NCard>
-    <template #description>你都不知道你有多块</template>
   </NSpin>
 </template>
 

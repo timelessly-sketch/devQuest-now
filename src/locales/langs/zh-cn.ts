@@ -387,6 +387,18 @@ const local: App.I18n.Schema = {
             appid: '请输入飞书应用标识',
             secret: '请输入飞书密钥'
           }
+        },
+        hupay: {
+          title: '虎皮椒支付设置',
+          appid: 'Appid',
+          secret: '密钥',
+          host: '支付网关',
+          info: '支付渠道信息',
+          form: {
+            appid: '请输入Appid',
+            secret: '请输入密钥',
+            host: '请输入支付网关接口'
+          }
         }
       },
       code: {

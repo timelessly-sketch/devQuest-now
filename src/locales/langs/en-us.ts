@@ -387,6 +387,18 @@ const local: App.I18n.Schema = {
             appid: 'appid',
             secret: 'secret'
           }
+        },
+        hupay: {
+          title: 'hupay title',
+          appid: 'appid',
+          secret: 'secret',
+          host: 'host',
+          info: 'info',
+          form: {
+            appid: 'appid',
+            secret: 'secret',
+            host: 'host'
+          }
         }
       },
       code: {

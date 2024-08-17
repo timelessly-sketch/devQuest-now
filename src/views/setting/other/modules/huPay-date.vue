@@ -4,27 +4,29 @@ import { $t } from '@/locales';
 import { fetchSetting, fetchSettingEdit } from '@/service/api';
 
 defineOptions({
-  name: 'FeiShuData'
+  name: 'HuPayData'
 });
 
-interface feishu {
+interface huPay {
   appid: string;
   secret: string;
+  host: string;
 }
 
 const isLoading = ref(false);
 const show = ref(true);
-const model: feishu = reactive(createDefaultModel());
-function createDefaultModel(): feishu {
+const model: huPay = reactive(createDefaultModel());
+function createDefaultModel(): huPay {
   return {
     appid: '',
-    secret: ''
+    secret: '',
+    host: ''
   };
 }
 
 async function handleSubmit() {
   isLoading.value = true;
-  const { error } = await fetchSettingEdit({ name: 'feishu', configuration: model });
+  const { error } = await fetchSettingEdit({ name: 'hupay', configuration: model });
   if (!error) {
     window.$message?.success($t('common.updateSuccess'));
   }
@@ -32,7 +34,7 @@ async function handleSubmit() {
 }
 
 onMounted(async () => {
-  const { error, data } = await fetchSetting('feishu');
+  const { error, data } = await fetchSetting('hupay');
   if (!error) {
     Object.assign(model, data.configuration);
   }
@@ -44,18 +46,21 @@ onMounted(async () => {
   <NSpin :show="show">
     <NCard :bordered="false" size="small" class="card-wrapper" segmented>
       <template #header>
-        {{ $t('page.setting.other.feishu.title') }}
+        {{ $t('page.setting.other.hupay.title') }}
       </template>
       <template #header-extra>
-        <span class="small-text">{{ $t('page.setting.other.feishu.info') }}</span>
+        <span class="small-text">{{ $t('page.setting.other.hupay.info') }}</span>
       </template>
       <NForm :model="model" label-placement="left" :label-width="80">
         <NGrid responsive="screen" item-responsive>
-          <NFormItemGi span="24 s:12 m:6" :label="$t('page.setting.other.feishu.appid')" class="pr-20px">
-            <NInput v-model:value="model.appid" :placeholder="$t('page.setting.other.feishu.form.appid')" />
+          <NFormItemGi span="24 s:12 m:6" :label="$t('page.setting.other.hupay.appid')" class="pr-20px">
+            <NInput v-model:value="model.appid" :placeholder="$t('page.setting.other.hupay.form.appid')" />
           </NFormItemGi>
-          <NFormItemGi span="24 s:12 m:8" :label="$t('page.setting.other.feishu.secret')" class="pr-20px">
-            <NInput v-model:value="model.secret" :placeholder="$t('page.setting.other.feishu.form.secret')" />
+          <NFormItemGi span="24 s:12 m:8" :label="$t('page.setting.other.hupay.secret')" class="pr-20px">
+            <NInput v-model:value="model.secret" :placeholder="$t('page.setting.other.hupay.form.secret')" />
+          </NFormItemGi>
+          <NFormItemGi span="24 s:12 m:8" :label="$t('page.setting.other.hupay.host')" class="pr-20px">
+            <NInput v-model:value="model.host" :placeholder="$t('page.setting.other.hupay.form.host')" />
           </NFormItemGi>
         </NGrid>
       </NForm>
