@@ -467,6 +467,9 @@ declare namespace App {
         };
         toup: {
           title: string;
+          quotaTitle: string;
+          utilizedQuota: string;
+          remainingQuota: string;
           code: {
             title: string;
             desc: string;
@@ -606,11 +609,22 @@ declare namespace App {
           code: {
             title: string;
             button: string;
+            success: string;
+            failed: string;
             add: {
               title: string;
               name: string;
               quota: string;
               number: string;
+            };
+            form: {
+              id: string;
+              name: string;
+              key: string;
+              quota: string;
+              mail: string;
+              createAt: string;
+              updateAt: string;
             };
           };
         };

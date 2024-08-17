@@ -250,8 +250,11 @@ const local: App.I18n.Schema = {
     },
     toup: {
       title: '我的钱包',
+      quotaTitle: '钱包概况',
+      utilizedQuota: '已用余额 {utilizedQuota}',
+      remainingQuota: '剩余余额 {utilizedQuota}',
       code: {
-        title: '兑换码',
+        title: '兑换余额',
         desc: '请填写兑换码',
         info: '还没有兑换码？ 客服购买更优惠哦^'
       },
@@ -389,11 +392,22 @@ const local: App.I18n.Schema = {
       code: {
         title: '兑换码',
         button: '添加兑换码',
+        success: '复制成功',
+        failed: '复制失败',
         add: {
           title: '添加兑换码',
           name: '名称',
           quota: '额度',
           number: '数量'
+        },
+        form: {
+          id: 'id',
+          name: '名称',
+          key: '兑换码',
+          quota: '额度',
+          mail: '使用者',
+          createAt: '创建时间',
+          updateAt: '更新时间'
         }
       }
     },

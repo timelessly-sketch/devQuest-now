@@ -15,13 +15,13 @@ const columns: DataTableColumn<Api.SystemManage.RedemptionResp>[] = [
     width: 58
   },
   {
-    title: '名称',
+    title: $t('page.setting.code.form.name'),
     key: 'name',
     align: 'center',
     width: 80
   },
   {
-    title: '兑换码',
+    title: $t('page.setting.code.form.key'),
     key: 'key',
     align: 'center',
     width: 180,
@@ -32,10 +32,10 @@ const columns: DataTableColumn<Api.SystemManage.RedemptionResp>[] = [
           .writeText(row.key)
           .then(() => {
             // 复制成功后的操作，例如提示用户复制成功
-            window.$message?.success?.('复制成功');
+            window.$message?.success?.($t('page.setting.code.success'));
           })
           .catch(() => {
-            window.$message?.error?.('复制失败');
+            window.$message?.error?.($t('page.setting.code.failed'));
           });
       };
 
@@ -51,7 +51,7 @@ const columns: DataTableColumn<Api.SystemManage.RedemptionResp>[] = [
     }
   },
   {
-    title: '额度',
+    title: $t('page.setting.code.form.quota'),
     key: 'quota',
     align: 'center',
     width: 40,
@@ -63,19 +63,19 @@ const columns: DataTableColumn<Api.SystemManage.RedemptionResp>[] = [
     }
   },
   {
-    title: '创建时间',
+    title: $t('page.setting.code.form.createAt'),
     key: 'createAt',
     align: 'center',
     width: 140
   },
   {
-    title: '使用时间',
+    title: $t('page.setting.code.form.updateAt'),
     key: 'updateAt',
     align: 'center',
     width: 140
   },
   {
-    title: '兑换人',
+    title: $t('page.setting.code.form.mail'),
     key: 'mail',
     align: 'center',
     width: 140,

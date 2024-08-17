@@ -250,6 +250,9 @@ const local: App.I18n.Schema = {
     },
     toup: {
       title: 'toup',
+      quotaTitle: 'quota',
+      utilizedQuota: 'utilizedQuota',
+      remainingQuota: 'remainingQuota',
       code: {
         title: 'code',
         desc: 'code',
@@ -389,11 +392,22 @@ const local: App.I18n.Schema = {
       code: {
         title: 'title',
         button: 'button',
+        success: 'success',
+        failed: 'failed',
         add: {
           title: 'add title',
           name: 'name',
           quota: 'quota',
           number: 'number'
+        },
+        form: {
+          id: 'id',
+          name: 'name',
+          key: 'key',
+          quota: 'quota',
+          mail: 'mail',
+          createAt: 'createAt',
+          updateAt: 'updateAt'
         }
       }
     },

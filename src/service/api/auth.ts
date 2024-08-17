@@ -139,3 +139,12 @@ export function fetchRedemption(params?: Api.SystemManage.Redemption) {
     params
   });
 }
+
+// 使用兑换码
+export function fetchRedeem(params?: { code: string }) {
+  return request({
+    url: `/system/redeem/`,
+    method: 'post',
+    params
+  });
+}
