@@ -11,6 +11,8 @@ interface huPay {
   appid: string;
   secret: string;
   host: string;
+  notify: string;
+  ratios: string;
 }
 
 const isLoading = ref(false);
@@ -20,7 +22,9 @@ function createDefaultModel(): huPay {
   return {
     appid: '',
     secret: '',
-    host: ''
+    host: '',
+    ratios: '',
+    notify: ''
   };
 }
 
@@ -56,11 +60,17 @@ onMounted(async () => {
           <NFormItemGi span="24 s:12 m:6" :label="$t('page.setting.other.hupay.appid')" class="pr-20px">
             <NInput v-model:value="model.appid" :placeholder="$t('page.setting.other.hupay.form.appid')" />
           </NFormItemGi>
-          <NFormItemGi span="24 s:12 m:8" :label="$t('page.setting.other.hupay.secret')" class="pr-20px">
+          <NFormItemGi span="24 s:12 m:7" :label="$t('page.setting.other.hupay.secret')" class="pr-20px">
             <NInput v-model:value="model.secret" :placeholder="$t('page.setting.other.hupay.form.secret')" />
           </NFormItemGi>
           <NFormItemGi span="24 s:12 m:8" :label="$t('page.setting.other.hupay.host')" class="pr-20px">
             <NInput v-model:value="model.host" :placeholder="$t('page.setting.other.hupay.form.host')" />
+          </NFormItemGi>
+          <NFormItemGi span="24 s:12 m:6" :label="$t('page.setting.other.hupay.notify')" class="pr-20px">
+            <NInput v-model:value="model.notify" :placeholder="$t('page.setting.other.hupay.form.notify')" />
+          </NFormItemGi>
+          <NFormItemGi span="24 s:12 m:7" :label="$t('page.setting.other.hupay.ratios')" class="pr-20px">
+            <NInput v-model:value="model.ratios" :placeholder="$t('page.setting.other.hupay.form.ratios')" />
           </NFormItemGi>
         </NGrid>
       </NForm>

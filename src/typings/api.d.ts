@@ -199,5 +199,12 @@ declare namespace Api {
     }>;
 
     type RedemptionList = Common.PaginatingQueryRecord<RedemptionResp>;
+
+    type QrCodePay = {
+      url: string;
+      payQuota: string;
+      payNumber: string;
+      order: string;
+    };
   }
 }

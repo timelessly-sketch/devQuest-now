@@ -260,7 +260,15 @@ const local: App.I18n.Schema = {
       },
       recharge: {
         title: '在线充值',
-        desc: '微信充值'
+        desc: '微信充值',
+        success: '兑换成功'
+      },
+      qrCode: {
+        title: '支付详情',
+        payQuota: '充值数量',
+        payNumber: '实付金额',
+        success: '已支付?',
+        recognize: '支付成功'
       }
     },
     manage: {
@@ -394,10 +402,14 @@ const local: App.I18n.Schema = {
           secret: '密钥',
           host: '支付网关',
           info: '支付渠道信息',
+          notify: '支付回调',
+          ratios: '充值比例',
           form: {
             appid: '请输入Appid',
             secret: '请输入密钥',
-            host: '请输入支付网关接口'
+            host: '请输入支付网关接口',
+            notify: '请输入支付回调',
+            ratios: '请输入充值比例'
           }
         }
       },

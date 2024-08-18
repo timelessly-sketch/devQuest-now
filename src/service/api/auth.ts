@@ -148,3 +148,20 @@ export function fetchRedeem(params?: { code: string }) {
     params
   });
 }
+
+// 支付模块
+export function fetchPay(params?: { number: number }) {
+  return request<Api.SystemManage.QrCodePay>({
+    url: 'system/pay/generate',
+    method: 'post',
+    params
+  });
+}
+
+export function fetchPayRecognize(params?: { order: string }) {
+  return request({
+    url: '/system/pay/recognize',
+    method: 'post',
+    params
+  });
+}

@@ -260,7 +260,15 @@ const local: App.I18n.Schema = {
       },
       recharge: {
         title: 'online recharge',
-        desc: 'online recharge'
+        desc: 'online recharge',
+        success: 'success'
+      },
+      qrCode: {
+        title: 'pay detail',
+        payQuota: 'pay Quota',
+        payNumber: 'pay Number',
+        success: 'success?',
+        recognize: 'recognize'
       }
     },
     manage: {
@@ -394,10 +402,14 @@ const local: App.I18n.Schema = {
           secret: 'secret',
           host: 'host',
           info: 'info',
+          notify: 'notify',
+          ratios: 'ratios',
           form: {
             appid: 'appid',
             secret: 'secret',
-            host: 'host'
+            host: 'host',
+            notify: 'notify',
+            ratios: 'ratios'
           }
         }
       },

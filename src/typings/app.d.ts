@@ -478,6 +478,14 @@ declare namespace App {
           recharge: {
             title: string;
             desc: string;
+            success: string;
+          };
+          qrCode: {
+            title: string;
+            payQuota: string;
+            payNumber: string;
+            success: string;
+            recognize: string;
           };
         };
         manage: {
@@ -611,10 +619,14 @@ declare namespace App {
               appid: string;
               secret: string;
               host: string;
+              notify: string;
+              ratios: string;
               form: {
                 appid: string;
                 secret: string;
                 host: string;
+                notify: string;
+                ratios: string;
               };
             };
           };
